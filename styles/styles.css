@@ -112,7 +112,7 @@ body {
 
 /* Section Divider */
 hr.section-divider {
-    border-top: 1px solid #88DDFB;
+    border-top: 2px solid #88DDFB;
     margin: 2.5rem auto;
     width: 100%;
 }
