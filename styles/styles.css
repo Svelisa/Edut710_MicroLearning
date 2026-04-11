@@ -9,7 +9,8 @@
     flex-shrink: 0;
 }
 
-/* Base Styles */
+
+
 body {
     font-family: 'Assistant', sans-serif;
     font-size: 16px;
@@ -17,12 +18,17 @@ body {
     background-color: #0D0431;
     color: #ffffff;
     min-height: 100vh;
-    position: relative;
+}
+
+#startup-app, #exercise-app {
     overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
 }
 
 /* Background Vectors (Simulated with pseudo-elements for now) */
-body::before {
+#startup-app::before, #exercise-app::before {
     content: "";
     position: absolute;
     top: 0;
@@ -33,7 +39,7 @@ body::before {
     z-index: -1;
 }
 
-body::after {
+#startup-app::after, #exercise-app::after {
     content: "";
     position: absolute;
     bottom: -50px;
