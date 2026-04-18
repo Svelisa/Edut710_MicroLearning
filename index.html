@@ -29,16 +29,63 @@
     <!-- Center layout using mx-auto natively -->
     <div class="d-flex justify-content-center w-100">
         <div class="main-container w-100">
-            <header class="d-flex justify-content-between p-3 align-items-center">
-                <div class="menu-icon">
-                    <img src="images/mdi-light_menu.svg" alt="תפריט" style="height: 44px; width: auto;">
-                </div>
+
+            <header class="d-flex justify-content-between p-3 align-items-center border-bottom border-secondary">
                 <div class="logo-icon">
-                    <img src="images/logo.svg" alt="עדות 710" style="height: 44px; width: auto;">
+                    <a href="https://www.edut710.org/" target="_blank" rel="noopener noreferrer"
+                        aria-label="מעבר לאתר הרשמי של עדות 710" class="d-inline-flex align-items-center"
+                        style="min-width: 44px; min-height: 44px;">
+                        <img src="images/logo.svg" alt="לוגו עדות 710 - מעבר לאתר הארגון"
+                            style="height: 44px; width: auto;">
+                    </a>
+                </div>
+
+                <!-- Desktop Navbar (Hidden below 1025px) -->
+                <ul class="nav desktop-nav align-items-center mb-0">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link text-decoration-none">ראשי</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-decoration-none" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            יחידות לימוד
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="unit1.html">מי אנחנו?</a></li>
+                            <li><a class="dropdown-item" href="unit2.html">גבולות ואתיקה</a></li>
+                            <li><a class="dropdown-item" href="unit3.html">חוסן</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-decoration-none" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            הכנה לתפקיד
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">מראיין/ת</a></li>
+                            <li><a class="dropdown-item" href="#">צלם/ת</a></li>
+                            <li><a class="dropdown-item" href="#">עורך/ת וידאו</a></li>
+                            <li><a class="dropdown-item" href="#">עורך/ת תוכן</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.edut710.org/" target="_blank"
+                            class="nav-link text-decoration-none highlight-hover">לאתר המיזם</a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Wrapper -->
+                <div class="mobile-menu-wrapper">
+                    <button class="menu-icon btn btn-link text-decoration-none d-flex align-items-center p-2"
+                        type="button" data-bs-toggle="offcanvas" data-bs-target="#mainOffcanvas"
+                        aria-controls="mainOffcanvas" style="min-height: 44px; min-width: 44px;">
+                        <img src="images/mdi-light_menu.svg" alt="" style="height: 44px; width: auto;">
+                    </button>
                 </div>
             </header>
 
             <main class="container py-3">
+
                 <!-- Logo Header -->
                 <div class="text-center mb-5">
                     <h1 class="logo-title">
@@ -103,13 +150,15 @@
                     <p class="small text-button d-inline-block px-3 py-1 rounded">בחרו יחידה והתחילו ללמוד</p>
 
                     <div class="row g-3 justify-content-center mt-3 mx-2">
-                        <div class="col-6">
-                            <div class="unit-box">מי אנחנו?</div>
+                        <div class="col-6 col-md-4">
+                            <a href="unit1.html" class="unit-box" target="_blank" rel="noopener noreferrer">מי
+                                אנחנו?</a>
                         </div>
-                        <div class="col-6">
-                            <div class="unit-box">גבולות ואתיקה</div>
+                        <div class="col-6 col-md-4">
+                            <a href="unit2.html" class="unit-box" target="_blank" rel="noopener noreferrer">גבולות
+                                ואתיקה</a>
                         </div>
-                        <div class="col-6 mx-auto">
+                        <div class="col-6 col-md-4 mx-auto">
                             <a href="unit3.html" class="unit-box" target="_blank" rel="noopener noreferrer">חוסן</a>
                         </div>
                     </div>
@@ -130,16 +179,16 @@
                     <p class="small text-button d-inline-block px-3 py-1 rounded">בחרו את המסלול שלכם כדי להתחיל</p>
 
                     <div class="row g-3 justify-content-center mt-3 mx-2">
-                        <div class="col-6">
+                        <div class="col-6 col-md-3">
                             <div class="unit-box">מראיין/ת</div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 col-md-3">
                             <div class="unit-box">צלם/ת</div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 col-md-3">
                             <div class="unit-box">עורך/ת וידאו</div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 col-md-3">
                             <div class="unit-box">עורך/ת תוכן</div>
                         </div>
                     </div>
@@ -152,7 +201,7 @@
                     <p class="small">כעת, לאחר שהשלמתם את המיני-קורס, נשמח לצאת לדרך משותפת.</p>
                     <p class="small">מלאו את הפרטים ונחזור אליכם בהקדם לתיאום ההתנדבות שלכם בשטח, תודה רבה ובהצלחה!</p>
 
-                    <form class="contact-form mx-auto mt-4" style="max-width: 320px;">
+                    <form class="contact-form mx-auto mt-4">
                         <div class="d-flex align-items-center mb-3">
                             <label class="form-label mb-0" style="width: 85px; text-align: right;">שם פרטי</label>
                             <div class="icon-placeholder mx-2" style="border-color: #9AA1C5;"></div>
@@ -176,6 +225,39 @@
                         </div>
                     </form>
             </main>
+        </div>
+    </div>
+
+    <!-- Offcanvas Menu -->
+    <div class="offcanvas offcanvas-start custom-menu" tabindex="-1" id="mainOffcanvas"
+        aria-labelledby="mainOffcanvasLabel">
+        <div class="offcanvas-header border-bottom border-secondary">
+            <h5 class="offcanvas-title fw-bold" id="mainOffcanvasLabel">תפריט</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="סגור"></button>
+        </div>
+        <div class="offcanvas-body p-0">
+            <ul class="nav flex-column senior-nav w-100">
+                <li class="nav-item">
+                    <a class="nav-link main-item" href="index.html">ראשי</a>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link text-highlight fw-bold pe-none">יחידות הלימוד</div>
+                </li>
+                <li class="nav-item"><a class="nav-link sub-item" href="unit1.html">מי אנחנו?</a></li>
+                <li class="nav-item"><a class="nav-link sub-item" href="#">גבולות ואתיקה</a></li>
+                <li class="nav-item"><a class="nav-link sub-item" href="unit3.html">חוסן</a></li>
+                <li class="nav-item">
+                    <div class="nav-link text-highlight fw-bold pe-none">הכנה לתפקיד</div>
+                </li>
+                <li class="nav-item"><a class="nav-link sub-item" href="#">מראיין/ת</a></li>
+                <li class="nav-item"><a class="nav-link sub-item" href="#">צלם/ת</a></li>
+                <li class="nav-item"><a class="nav-link sub-item" href="#">עורך/ת וידאו</a></li>
+                <li class="nav-item"><a class="nav-link sub-item" href="#">עורך/ת תוכן</a></li>
+                <li class="nav-item mt-3 border-top border-secondary">
+                    <a class="nav-link main-item" href="https://www.edut710.org/" target="_blank">לאתר המיזם</a>
+                </li>
+            </ul>
         </div>
     </div>
 
