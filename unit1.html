@@ -150,7 +150,7 @@
                                 <div class="goal-plus flex-shrink-0 ms-3">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
                                         stroke-width="1.5">
-                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line class="vertical-line" x1="12" y1="5" x2="12" y2="19"></line>
                                         <line x1="5" y1="12" x2="19" y2="12"></line>
                                     </svg>
                                 </div>
@@ -171,7 +171,7 @@
                                 <div class="goal-plus flex-shrink-0 ms-3">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
                                         stroke-width="1.5">
-                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line class="vertical-line" x1="12" y1="5" x2="12" y2="19"></line>
                                         <line x1="5" y1="12" x2="19" y2="12"></line>
                                     </svg>
                                 </div>
@@ -191,7 +191,7 @@
                                 <div class="goal-plus flex-shrink-0 ms-3">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
                                         stroke-width="1.5">
-                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line class="vertical-line" x1="12" y1="5" x2="12" y2="19"></line>
                                         <line x1="5" y1="12" x2="19" y2="12"></line>
                                     </svg>
                                 </div>
@@ -211,7 +211,7 @@
                                 <div class="goal-plus flex-shrink-0 ms-3">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
                                         stroke-width="1.5">
-                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line class="vertical-line" x1="12" y1="5" x2="12" y2="19"></line>
                                         <line x1="5" y1="12" x2="19" y2="12"></line>
                                     </svg>
                                 </div>
@@ -309,148 +309,552 @@
                 </div>
 
                 <hr class="section-divider">
-                <section class="container my-5 py-4 bg-white rounded-4 shadow-sm">
-                    <h2 class="text-center mb-4" style="color: #0D0431; font-family: 'Karantina'; font-size: 2.5rem;">
-                        הצוות שלנו
-                    </h2>
 
-                    <div id="teamCarousel" class="carousel slide" data-bs-ride="false">
-                        <div class="carousel-inner p-3">
-                            <div class="carousel-item active text-center">
-                                <div class="team-card mx-auto p-4" style="max-width: 350px;">
-                                    <img src="images/team1.jpg" class="rounded-circle mb-3 border border-4"
-                                        style="width: 150px; height: 150px; border-color: #39a1bb !important;"
-                                        alt="אמילי קים">
-                                    <h3 class="h4 fw-bold" style="color: #0D0431;">אמילי קים</h3>
-                                    <p class="badge bg-info text-dark fs-5 mb-3">מייסדת</p>
-                                    <p class="text-muted fs-5">מובילה עם חזון ומעל 10 שנות ניסיון בתחום התיעוד.</p>
+                <!-- Organization Structure Section -->
+                <div class="text-center mb-5">
+                    <h2 class="fs-4 fw-bold mb-3">מבנה פעילות: חברי הוועד המנהל</h2>
+
+                    <div class="hint-box d-inline-block px-4 py-2 mb-4 mx-auto w-100" style="max-width: 500px;">
+                        לחצו על מבנה פעילות לראות מי השותפים הפעילים
+                    </div>
+
+                    <div class="goals-accordion text-start mx-auto mt-2">
+                        <!-- Item 1 -->
+                        <div class="goal-item" data-bs-toggle="collapse" href="#collapseOrg1" role="button"
+                            aria-expanded="false" aria-controls="collapseOrg1">
+                            <div
+                                class="d-flex justify-content-between align-items-center py-3 border-bottom border-secondary">
+                                <span class="fs-5 fw-normal text-start w-100">הנהגה וניהול רוחבי</span>
+                                <div class="goal-plus flex-shrink-0 ms-3">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
+                                        stroke-width="1.5">
+                                        <line class="vertical-line" x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="collapse goal-collapse" id="collapseOrg1">
+                                <div class="py-3 text-start" style="font-size: 1.125rem; opacity: 0.8;">
+                                    <ol class="mb-0 ps-4">
+                                        <li>מנכ"ל עדות 710</li>
+                                        <li>מייסדת שותפה, מנהלת פרויקט כיתות כוננות</li>
+                                        <li>מייסד שותף ויו"ר</li>
+                                        <li>מייסדת שותפה, מנהלת תפעול</li>
+                                        <li>יועץ משפטי</li>
+                                    </ol>
                                 </div>
                             </div>
                         </div>
 
-                        <button class="carousel-control-prev senior-carousel-btn" type="button"
-                            data-bs-target="#teamCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon shadow-sm" aria-hidden="true"></span>
-                            <span class="btn-label">הקודם</span>
-                        </button>
-                        <button class="carousel-control-next senior-carousel-btn" type="button"
-                            data-bs-target="#teamCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon shadow-sm" aria-hidden="true"></span>
-                            <span class="btn-label">הבא</span>
-                        </button>
+                        <!-- Item 2 -->
+                        <div class="goal-item" data-bs-toggle="collapse" href="#collapseOrg2" role="button"
+                            aria-expanded="false" aria-controls="collapseOrg2">
+                            <div
+                                class="d-flex justify-content-between align-items-center py-3 border-bottom border-secondary">
+                                <span class="fs-5 fw-normal text-start w-100">תוכן, אסטרטגיה ופיתוח</span>
+                                <div class="goal-plus flex-shrink-0 ms-3">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
+                                        stroke-width="1.5">
+                                        <line class="vertical-line" x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="collapse goal-collapse" id="collapseOrg2">
+                                <div class="py-3 text-start" style="font-size: 1.125rem; opacity: 0.8;">
+                                    <ol class="mb-0 ps-4">
+                                        <li>שותפויות אסטרטגיות ופיתוח תוכן</li>
+                                        <li>מנהלת אקדמית, מנהלת מחלקת תוכן</li>
+                                        <li>מייסדת שותפה ומנהלת פרויקט כיתות כוננות.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="goal-item" data-bs-toggle="collapse" href="#collapseOrg3" role="button"
+                            aria-expanded="false" aria-controls="collapseOrg3">
+                            <div
+                                class="d-flex justify-content-between align-items-center py-3 border-bottom border-secondary">
+                                <span class="fs-5 fw-normal text-start w-100">תשתיות, טכנולוגיה וקהילה</span>
+                                <div class="goal-plus flex-shrink-0 ms-3">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
+                                        stroke-width="1.5">
+                                        <line class="vertical-line" x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="collapse goal-collapse" id="collapseOrg3">
+                                <div class="py-3 text-start" style="font-size: 1.125rem; opacity: 0.8;">
+                                    <ol class="mb-0 ps-4">
+                                        <li>מנהל מחשוב ומערכות מידע</li>
+                                        <li>מנהל דיגיטל</li>
+                                        <li>מייסד שותף, גיוס משאבים וניהול שיתופי פעולה</li>
+                                        <li>מנהלת רכזי קהילות</li>
+                                        <li>מנהל כספים</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="goal-item" data-bs-toggle="collapse" href="#collapseOrg4" role="button"
+                            aria-expanded="false" aria-controls="collapseOrg4">
+                            <div
+                                class="d-flex justify-content-between align-items-center py-3 border-bottom border-secondary">
+                                <span class="fs-5 fw-normal text-start w-100">יצירה, תיעוד וארכיון</span>
+                                <div class="goal-plus flex-shrink-0 ms-3">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
+                                        stroke-width="1.5">
+                                        <line class="vertical-line" x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="collapse goal-collapse" id="collapseOrg4">
+                                <div class="py-3 text-start" style="font-size: 1.125rem; opacity: 0.8;">
+                                    <ol class="mb-0 ps-4">
+                                        <li>מייסד שותף ומנהל קטלוגי ודוקומנטרי</li>
+                                        <li>מנהלת מחלקת עריכת וידאו</li>
+                                        <li>ניהול מערך צילום וראיונות</li>
+                                        <li>מנהלת מחלקת ארכיב</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+                <section class="container-fluid py-5 team-section-dark mt-5">
+                    <div class="container text-center text-white">
+                        <h2 class="mb-4" style="font-family: 'Karantina'; font-size: 3.5rem;">האנשים מאחורי עדות</h2>
+
+                        <p class="mx-auto mb-4 px-3"
+                            style="max-width: 800px; font-size: 1.125rem; line-height: 1.6; opacity: 0.9;">
+                            המתנדבות והמתנדבים ב"עדות 710" באים ממקומות שונים במובן הגיאוגרפי, המקצועי והרגשי.<br>
+                            בדרך קסם נוצר ארגון של מתנדבים ומתנדבות שבמסירות מוחלטת עושים הכל ללא שום ציפייה לתמורה
+                            חומרית או אישית.
+                        </p>
+
+                        <div class="hint-box d-inline-block px-4 py-3 mb-5 mx-auto rounded-3"
+                            style="max-width: 600px; font-size: 1.1rem; background-color: #C6E0E5; color: #0D0431;">
+                            כדי להכיר את חברי וחברות הצוות, יש ללחוץ על החצים. לפרטים נוספים, ניתן ללחוץ על כפתור
+                            ההרחבה.
+                        </div>
+
+                        <!-- 3D Carousel Only for Images -->
+                        <div class="team-3d-carousel-wrapper mx-auto mb-4"
+                            style="position: relative; max-width: 100%; height: 280px; perspective: 1200px; overflow: visible; display: flex; align-items: center; justify-content: center;">
+                            <div id="team3DCarousel"
+                                class="team-3d-container w-100 h-100 position-relative d-flex justify-content-center align-items-center"
+                                style="transform-style: preserve-3d;">
+
+                                <!-- Card 1 -->
+                                <div class="team-3d-card active" data-index="0" data-name="עדי נחשון"
+                                    data-role="שותפויות אסטרטגיות ופיתוח תוכן">
+                                    <div class="img-wrapper">
+                                        <img src="https://static.wixstatic.com/media/747277_40906a3ba0b34e2ba09f42820c23399f~mv2.jpg"
+                                            class="team-img" alt="עדי נחשון">
+                                    </div>
+                                    <div class="d-none card-bio">ילידת הארץ, דור 15, ונדמה כי משהו בחיבור הכל כך שורשי
+                                        הזה משפיע על כל העשייה שלי. בעלת רקע אקדמי בלימודי אמנות ויהדות , ואמנות ככלי
+                                        לשינוי חברתי. כל חיי אני פועלת בשדה התרבות - אמנות פלסטית, כתיבה ביוגרפית,
+                                        קולנוע דוקומנטרי ועוד - כחוקרת, מפתחת תוכן, ומובילת מיזמים חברתיים, תרבותיים
+                                        בעשור האחרון, מייסדת ומנחה את מיזם "נהר מעדן – אמנים יוצרים דיוקן אישי וחברתי"
+                                        הפועל בקהילות בישראל ובחו"ל הצטרפתי לעדות 710 בנוב' 2023, כשותפה לצוות ההובלה,
+                                        בתחום פיתוח משאבים, שותפויות אסטרטגיות ופיתוח תוכן.</div>
+                                </div>
+
+                                <!-- Card 2 -->
+                                <div class="team-3d-card" data-index="1" data-name="גיל לוין"
+                                    data-role="מנכ״ל עדות 710">
+                                    <div class="img-wrapper">
+                                        <img src="https://static.wixstatic.com/media/747277_de889f063a0c410e8b8ee671d5ddc46d~mv2.jpg"
+                                            class="team-img" alt="גיל לוין">
+                                    </div>
+                                    <div class="d-none card-bio">בן 43, מתגורר בתל אביב. עד 2015 עובד סוציאלי בתחום
+                                        ילדים ונוער- במרכז חירום לילדים בתל-אביב ולאחר מכן בפנימייה פוסט-אישפוזית לנוער
+                                        בפרדס חנה. מ-2015 ועד היום, צלם סטילס ומורה לצילום, בעל סטודיו לצילום בתל-אביב.
+                                        מצלם פורטרטים ונוף, ומתמחה בצילום אנלוגי. ממקימי ״עדות 710״ ובצוות ההובלה של
+                                        הארגון מתחילתו. פעילותו בארגון במהלך השנה הראשונה כללה עבודה כמראיין וכצלם,
+                                        ריכוז והובלה של צוותי השטח- צילום וראיון, וריכוז של צוות הליווי הרגשי. מדצמבר
+                                        2024, מנכ״ל בפועל של ״עדות 710״.</div>
+                                </div>
+
+                                <!-- Card 3 -->
+                                <div class="team-3d-card" data-index="2" data-name="ירון שלמי" data-role="יועץ משפטי">
+                                    <div class="img-wrapper">
+                                        <img src="https://static.wixstatic.com/media/c4232e_19b2228bccad40c786354125a3ce5d4f~mv2.jpg"
+                                            class="team-img" alt="ירון שלמי">
+                                    </div>
+                                    <div class="d-none card-bio">יועמ"ש עדות 710 מאז הקמתה באוקטובר 2023, חבר הועד המנהל
+                                        וצוות ההובלה. בעל תואר שני (LLM) במשפט וטכנולוגיה מאוניברסיטת חיפה, ותואר שני
+                                        בהסטוריה (MA) מאוניברסיטת תל אביב. עוסק בתחום הקניין הרוחני, זכויות יוצרים, דיני
+                                        תקשורת ומדיה. מתגורר במושב אביאל, נשוי לדנית ואב לתמרי, אולי ונעמה.</div>
+                                </div>
+
+                                <!-- Card 4 -->
+                                <div class="team-3d-card" data-index="3" data-name="טליה אבישי"
+                                    data-role="מייסדת שותפה, פרויקט כיתות כוננות">
+                                    <div class="img-wrapper">
+                                        <img src="https://static.wixstatic.com/media/eb8ac6_ad4186532a17407fa9d6e853db6a618d~mv2.jpeg"
+                                            class="team-img" alt="טליה אבישי">
+                                    </div>
+                                    <div class="d-none card-bio">יוצרת מדיה דוקומנטרית בצילום. ממייסדי עדות 710, מפיקה
+                                        ראשית של פרויקט כיתות הכוננות, רכזת קהילות ניר עוז, כרם שלום ושדרות. בעלת תואר
+                                        בתקשורת ובבינוי קהילה. מרצה ומנחת קבוצות.</div>
+                                </div>
+
+                                <!-- Card 5 -->
+                                <div class="team-3d-card" data-index="4" data-name="תמר גן-צבי"
+                                    data-role="מנהלת מחלקת עריכת וידאו">
+                                    <div class="img-wrapper">
+                                        <img src="https://static.wixstatic.com/media/747277_4da91552697c41ada667196ce169ee51~mv2.jpg"
+                                            class="team-img" alt="תמר גן-צבי">
+                                    </div>
+                                    <div class="d-none card-bio">עורכת סרטים (לרוב) תיעודיים. מרצה בכירה בבית הספר
+                                        לקולנוע ולאומנויות מעלה בירושלים, ובמסגרת זו גם חונכת את הסטודנטים בעריכת סרטי
+                                        הגמר. הצטרפתי ל״עדות 710״ בתאריך 10.10.23 כדי לערוך עדויות, וזכיתי להיות חלק
+                                        מהצוות שהגדיר את הקווים המנחים ואת תהליכי העבודה המוקפדים שלנו. כיום מנהלת את
+                                        מחלקת עריכת הוידאו במיזם. ירושלמית, מלידה ועד בכלל, נשואה ואמא לשלוש.</div>
+                                </div>
+
+                                <!-- Card 6 -->
+                                <div class="team-3d-card" data-index="5" data-name="שגיא אלוני"
+                                    data-role="מייסד שותף ויו״ר">
+                                    <div class="img-wrapper">
+                                        <img src="https://static.wixstatic.com/media/747277_daf6654444674ebaa253efe03ea275f3~mv2.jpeg"
+                                            class="team-img" alt="שגיא אלוני">
+                                    </div>
+                                    <div class="d-none card-bio">אבא של בן, ירדן ורז. בחיים הרגילים שלי עצמאי, מנהל
+                                        פרויקטים בתחום התשתיות והסביבה. עובד, בין היתר, על הקמת הרכבת הקלה והמטרו של גוש
+                                        דן. כשלא מגדל ילדים או בעבודה, אוהב לחשוב על הרעיונות הגדולים של הפיזיקה,
+                                        הביולוגיה, ההיסטוריה, הפילוסופיה, האמנות והקולנוע. ב-07.10, ביחד עם קבוצה קטנה
+                                        של אנשים שאת רובם לא הכרתי, הקמתי את עדות 710. מאז החיים שלי, ושל הרבה אחרים,
+                                        השתנו מאד. משמש כיו"ר עדות 710 וגאה בכל השותפים לדרך.</div>
+                                </div>
+
+                                <!-- Card 7 -->
+                                <div class="team-3d-card" data-index="6" data-name="יעל נצר"
+                                    data-role="מנהלת מחלקת ארכיב">
+                                    <div class="img-wrapper">
+                                        <img src="https://static.wixstatic.com/media/3066f7_f61fb1c3fa2c4436854834ff3d0ec00b~mv2.jpeg"
+                                            class="team-img" alt="יעל נצר">
+                                    </div>
+                                    <div class="d-none card-bio">תואר שלישי במדעי המחשב בתחום בלשנות חישובית ולימודי
+                                        תואר שני בספרות עברית באוניברסיטת בן גוריון. חוקרת מובילה במרכז למדעי הרוח
+                                        הדיגיטליים באוניברסיטה העברית ושותפה במעבדת מדעי הרוח הדיגיטליים בחיפה. מלמדת,
+                                        חוקרת ובונה ארכיונים דיגיטליים אישיים ולא מוסדיים (עם קרן שוסטר). ממובילות
+                                        ארכיון ׳המזרחיון׳ למאבקים חברתיים. מיד אחרי שבעה באוקטובר הבנו את חשיבות תיעוד
+                                        האירועים, נתקלנו בקריאה להשתתפות בעדות 710 והצטרפנו - כדי להקים ולבסס את תשתית
+                                        הידע ליצירת הארכיון ההיסטורי.</div>
+                                </div>
+
+                                <!-- Card 8 -->
+                                <div class="team-3d-card" data-index="7" data-name="חיה שאשא קרופניק"
+                                    data-role="ניהול מערך צילום וראיונות">
+                                    <div class="img-wrapper">
+                                        <img src="https://static.wixstatic.com/media/84c70a_be749308b18044c09b59db125fe4d569~mv2.jpg"
+                                            class="team-img" alt="חיה שאשא קרופניק">
+                                    </div>
+                                    <div class="d-none card-bio">מנתחת מערכות מידע ומנהלת פרוייקטים בתחום המחשוב. בוגרת
+                                        תואר ראשון במתמטיקה ותואר שני בחקר ביצועים וניתוח מערכות מהטכניון. ביוני 2023
+                                        פרשתי מחברת החשמל, בה עבדתי 25 שנים מרתקות בתחום מערכות המידע. בעשור האחרון
+                                        לעבודתי ניהלתי פרויקטי מחשוב מורכבים וחוצי ארגון. בעודי תרה אחרי אתגרים מקצועיים
+                                        חדשים, התעוררנו לבוקר הנורא של ה - 7/10. מתוך צורך פנימי לתרום במציאות הטראגית
+                                        שנחתה עלינו, והבנה שהאירוע מחייב תיעוד והנצחה, הצטרפתי למיזם עדות 710 בסמוך
+                                        להקמתו. אני חברה בוועד המנהל של הארגון. מנהלת, ביחד עם גיל לוין, את מחלקת הראיון
+                                        והצילום. בנוסף, פעילה בישום והטמעת מערכות המידע במיזם. נשואה ואמא לשלושה, גרה
+                                        ביישוב נופית.</div>
+                                </div>
+
+                                <!-- Card 9 -->
+                                <div class="team-3d-card" data-index="8" data-name="נטע דקל" data-role="מנהל כספים">
+                                    <div class="img-wrapper">
+                                        <img src="https://static.wixstatic.com/media/3c55ec_a4390f42dcdf401a99b44f724d99ddf8~mv2.jpg"
+                                            class="team-img" alt="נטע דקל">
+                                    </div>
+                                    <div class="d-none card-bio">בן 62 ממושב בני עטרות. רואה חשבון ובעל תואר שני במנהל
+                                        עסקים. כיום, יועץ עצמאי בתחום מערכות המידע וצלם רחוב, דוקומנטרי ותרבויות. מראשית
+                                        2023 שותף בצוות צלמים המתעדים את המחאה ומה- 7 באוקטובר 2023 ממקימי עדות 710,
+                                        ומשמש כמנהל הכספים של האגודה. בנוסף אני מצלם עדויות של ניצולים ושורדים מאירועי
+                                        השבת השחורה של ה- 7/10.</div>
+                                </div>
+
+                                <!-- Card 10 -->
+                                <div class="team-3d-card" data-index="9" data-name="ד״ר אוהד אופז"
+                                    data-role="מייסד שותף, מנהל קולנועי">
+                                    <div class="img-wrapper">
+                                        <img src="https://static.wixstatic.com/media/3af8bd_6cae30945d544c3aa9cd096f4851f254~mv2.jpg"
+                                            class="team-img" alt="אוהד אופז">
+                                    </div>
+                                    <div class="d-none card-bio">ד"ר אוהד אופז, מיוזמי עדות 710, מוביל תחום תיעוד,
+                                        קולנוע ופוסט במיזם. קולנוען, איש חינוך, מרצה בכיר במכללת אורנים, חוקר אתיקה
+                                        דוקומנטרית ומומחה למיזמי מדיה ועדות חברתיים והיסטוריים טראומטיים. יוצר שותף של
+                                        הסרט התיעודי "המקשיב" (עם מיכה ליבנה), המביא את סיפורו וגישתו של דורי לאוב,
+                                        פסיכיאטר ניצול שואה, יוזם ארכיון העדויות הראשון.</div>
+                                </div>
+
+                                <!-- Card 11 -->
+                                <div class="team-3d-card" data-index="10" data-name="איתי קן-תור"
+                                    data-role="מייסד שותף, פיתוח משאבים">
+                                    <div class="img-wrapper">
+                                        <img src="https://static.wixstatic.com/media/247eec_7e25fb2171504eaf85a5b47f92019a49~mv2.jpg"
+                                            class="team-img" alt="איתי קן-תור">
+                                    </div>
+                                    <div class="d-none card-bio">קולנוען, איש חינוך ופעיל תרבות. מייסד שותף וחבר צוות
+                                        ההובלה של עדות 710, אחראי על שיתופי הפעולה וגיוס המשאבים. זכיתי לביים ולהפיק
+                                        עשרות סרטים וסדרות תעודה אשר הוקרנו בארץ ובעולם וזכו בפרסים רבים. בשנת 2005
+                                        הייתי מפיק שותף של כל סרטי התצוגה במוזיאון יד ושם. לצד פעילותי הקולנועית, אני
+                                        מרצה במכללת אורנים ובאוניברסיטה הפתוחה ומכהן כמדריך ארצי להפקות סרטים במשרד
+                                        החינוך. יזמתי מיזמי תרבות ואני שותף להובלת פסטיבל דרך הנדיב ודיאלוג דרך קולנוע.
+                                        בעבר הייתי חבר בהנהלות האקדמיה הישראלית לקולנוע ולטלוויזיה והפורום הדוקומנטרי
+                                        בישראל. נשוי למיכל ואב לפרדס, ארבל ומשוש.</div>
+                                </div>
+
+                                <!-- Card 12 -->
+                                <div class="team-3d-card" data-index="11" data-name="ד״ר רננה קידר"
+                                    data-role="מנהלת אקדמית, מנהלת תוכן">
+                                    <div class="img-wrapper">
+                                        <img src="https://static.wixstatic.com/media/aa3390_6df098777fa24ed99df3090083755053~mv2.jpg"
+                                            class="team-img" alt="רננה קידר">
+                                    </div>
+                                    <div class="d-none card-bio">אני מרצה בכירה למשפטים ומדעי הרוח הדיגיטליים
+                                        באוניברסיטה העברית בירושלים. באוניברסיטה, אני המנהלת האקדמי של המרכז למדעי הרוח
+                                        הדיגיטליים ועומדת בראש מעבדת אלפרד לנדקר לניתוח חישובי של עדויות שואה. במחקר שלי
+                                        אני מנתחת נרטיבים משפטיים ועדויות של פשעי זוועה המוניים והפרות זכויות אדם
+                                        שיטתיות תוך שימוש בטכניקות מתקדמות של ניתוח טקסט חישובי מתחומי מדעי הרוח
+                                        הדיגיטליים ועיבוד שפה טבעית.</div>
+                                </div>
+
+                                <!-- Card 13 -->
+                                <div class="team-3d-card" data-index="12" data-name="ישי פרנקל" data-role="מנהל דיגיטל">
+                                    <div class="img-wrapper">
+                                        <img src="https://static.wixstatic.com/media/428ef1_997b6ac254c94c77bcf880a36de0de51~mv2.png"
+                                            class="team-img" alt="ישי פרנקל">
+                                    </div>
+                                    <div class="d-none card-bio">בן 24 משדרות. בוגר תנועת אחריי ומשצ״ים, בוגר שנת שירות
+                                        של הסוכנות היהודית בקנדה. פעיל חברתי, מנגן בחצוצרה ותופים ומפתח אוטומציות בחברת
+                                        Healthy.io. בגיל 10 פתח ערוץ יוטיוב (HowToEvery) עם הדרכות על תוכנות מחשב, עריכת
+                                        וידאו וחדשות טכנולוגיה. שיחק בהצגות של האופרה הקלה בנגב ומעבדתרבות דימונה. מנהל
+                                        מחלקת דיגיטל ופרסום בעדות 710.</div>
+                                </div>
+
+                                <!-- Card 14 -->
+                                <div class="team-3d-card" data-index="13" data-name="רונית ניר"
+                                    data-role="מנהלת רכזי קהילות">
+                                    <div class="img-wrapper">
+                                        <img src="https://static.wixstatic.com/media/1158fe_2c97c09550b943eb8638889779cd2a1e~mv2.jpg"
+                                            class="team-img" alt="רונית ניר">
+                                    </div>
+                                    <div class="d-none card-bio">נשואה לאוהד ואמא לגיא, אריאל ופלג. בחיי היומיום עוסקת
+                                        בייעוץ אסטרטגי לתכנון פרויקטים תיירותיים ושותפה בחברת ר.א.ש תיירותי. מלווה עשרות
+                                        פרויקטים בייעוץ רעיוני, סטטוטורי וכלכלי בתחום התיירות. במסגרת כך עוסקת גם בתכנון
+                                        המרחב התיירותי בנגב המערבי, מה שהוביל אותי להצטרף ולסייע בעדות 710 בחיבור לשטח,
+                                        ליישובים ולתושבים. הצטרפתי לעדות 710 בתחילת הדרך ואני שותפה בצוות המוביל המתווה
+                                        את תהליך העבודה. אחראית על תחום ניהול הקהילות ומשתדלת לסייע גם בתחקיר וחיבור
+                                        לעדים ועדויות ובגיוס תרומות לפרויקט. גאה מאוד להיות חלק מהצוות המדהים של עדות
+                                        710.</div>
+                                </div>
+
+                                <!-- Card 15 -->
+                                <div class="team-3d-card" data-index="14" data-name="ניר דפנא"
+                                    data-role="מנהל מחשוב ומערכות מידע">
+                                    <div class="img-wrapper">
+                                        <img src="https://static.wixstatic.com/media/41c5af_679826820930470a9b65f8b552f30db3~mv2.jpg"
+                                            class="team-img" alt="ניר דפנא">
+                                    </div>
+                                    <div class="d-none card-bio">נשוי למיכל ואב לרועי ויונתן, נולדתי וגדלתי בקיבוץ מעוז
+                                        חיים אשר בעמק המעיינות. "הייטקיסט" ואוהב טכנולוגיה, צלם חובב, סבא רבא שלי היה
+                                        משורר וסבא שלי היה משורר וצלם. רץ למרחקים ארוכים ורוכב אופניים ואופנועים אוהב כל
+                                        ספורט אתגרי (כמעט). ממקימי ומובילי עדות 710, אחראי על תחום פיתוח מערכות המידע
+                                        ומצלם מידי פעם.</div>
+                                </div>
+
+                                <!-- Card 16 -->
+                                <div class="team-3d-card" data-index="15" data-name="מיכל בן-שושן"
+                                    data-role="מייסדת שותפה, מנהלת תפעול">
+                                    <div class="img-wrapper">
+                                        <img src="https://static.wixstatic.com/media/3513b4_f6e82fb349024bf2bf2bbcb8a231ac55~mv2.jpg"
+                                            class="team-img" alt="מיכל בן-שושן">
+                                    </div>
+                                    <div class="d-none card-bio">ממיסדות עדות 710, ומנהלת תפעול. פועלת לקידום יעדי
+                                        הארגון, תיעוד, שימור והנגשת עדויות.</div>
+                                </div>
+                            </div>
+
+                            <!-- Controls -->
+                            <button id="teamNextBtn" class="carousel-control-next"
+                                style="width: 80px; z-index: 100; border: none; background: transparent; cursor: pointer; opacity: 1;">
+                                <svg width="50" height="50" viewBox="0 0 24 24" fill="#ffffff">
+                                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+                                </svg>
+                            </button>
+                            <button id="teamPrevBtn" class="carousel-control-prev"
+                                style="width: 80px; z-index: 100; border: none; background: transparent; cursor: pointer; opacity: 1;">
+                                <svg width="50" height="50" viewBox="0 0 24 24" fill="#ffffff">
+                                    <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Dynamic Info Section -->
+                        <div class="team-info-section mx-auto mt-4" style="max-width: 400px;">
+                            <div class="d-flex align-items-center justify-content-center mb-2">
+                                <hr class="flex-grow-1 border-white opacity-100 m-0" style="border-width: 2px;">
+                                <h3 id="dynamicTeamName" class="h3 fw-bold mx-4 mb-0"
+                                    style="font-family: 'Heebo', sans-serif;">גיל לוין</h3>
+                                <hr class="flex-grow-1 border-white opacity-100 m-0" style="border-width: 2px;">
+                            </div>
+                            <p id="dynamicTeamRole" class="fs-5 mb-4 opacity-75">מנכ״ל עדות 710</p>
+                            <button id="teamExpandBtn"
+                                class="btn bg-white text-dark fw-bold rounded-pill px-5 py-2 fs-5">להרחבה</button>
+                        </div>
                     </div>
                 </section>
+
+                <!-- Team Member Modal -->
+                <div class="modal fade" id="teamMemberModal" tabindex="-1" aria-labelledby="teamMemberModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content"
+                            style="background-color: #0B0428; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+                            <div class="modal-header border-0 pb-0">
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body pt-0 text-white text-center px-4 pb-5">
+                                <div class="mb-4">
+                                    <img id="modalTeamImg" src="" alt="Profile Image" class="rounded-circle shadow"
+                                        style="width: 150px; height: 150px; object-fit: cover; border: 3px solid #39a1bb;">
+                                </div>
+                                <h3 id="modalTeamName" class="fw-bold mb-2" style="font-family: 'Heebo', sans-serif;">שם
+                                    מלא</h3>
+                                <p id="modalTeamRole" class="text-info fs-5 mb-4">תפקיד</p>
+                                <p id="modalTeamBio" class="text-start mx-auto"
+                                    style="max-width: 600px; font-size: 1.1rem; line-height: 1.6; opacity: 0.9;">
+                                    טקסט הרחבה...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <hr class="section-divider">
 
                 <!-- Workflow Process Section -->
                 <div class="text-center mb-5 workflow-section">
                     <h2 class="fs-4 fw-bold mb-4">תהליך העבודה</h2>
-                    <p class="subtitle mb-5 mx-auto px-3">
+                    <p class="subtitle mx-auto px-3 mb-4">
                         העדות עוברת דרך ארוכה ועדינה, מהמפגש האישי בשטח ועד להפיכתה לחלק מהזיכרון הלאומי.
                     </p>
 
-                    <!-- Phase 1 -->
-                    <div class="mb-5 workflow-phase">
-                        <h3 class="fs-5 fw-bold text-highlight mb-2">שלב א': ההכנה והתיעוד</h3>
-                        <p class="mb-4 text-white opacity-75" style="font-size: 1.125rem;">הקשר הראשוני מול העד</p>
-                        <div class="honeycomb-flow d-flex justify-content-center flex-wrap gap-2">
-                            <div class="hex-item">
-                                <div
-                                    class="hex-inner bg-white d-flex align-items-center justify-content-center position-relative text-center px-2">
-                                    <span class="step-num position-absolute badge rounded-circle"
-                                        style="top: 15px; background: rgba(57, 161, 187, 0.2); color: #0D0431; font-weight: bold; border: 1px solid #39a1bb;">1</span>
-                                    <span class="step-text fw-bold text-dark fs-5 mt-3">תחקיר</span>
+                    <div class="workflow-scroll-container text-start mx-auto position-relative"
+                        style="padding: 5vh 0;">
+                        <div class="workflow-steps-col px-4 mx-auto position-relative" style="max-width: 550px;">
+                            <!-- The Animated Progress Line -->
+                            <div class="workflow-timeline-wrapper">
+                                <div class="workflow-timeline-progress" id="workflow-progress">
+                                    <div class="workflow-timeline-dot"></div>
                                 </div>
                             </div>
-                            <div class="hex-item">
-                                <div
-                                    class="hex-inner bg-white d-flex align-items-center justify-content-center position-relative text-center px-2">
-                                    <span class="step-num position-absolute badge rounded-circle"
-                                        style="top: 15px; background: rgba(57, 161, 187, 0.2); color: #0D0431; font-weight: bold; border: 1px solid #39a1bb;">2</span>
-                                    <span class="step-text fw-bold text-dark fs-5 mt-3 text-wrap">צילום וריאיון</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Phase 2 -->
-                    <div class="mb-5 workflow-phase border-top border-secondary pt-4">
-                        <h3 class="fs-5 fw-bold text-highlight mb-2">שלב ב': עיבוד ואישור</h3>
-                        <p class="mb-4 text-white opacity-75" style="font-size: 1.125rem;">השלב שבו הופכים חומרי גלם
-                            לסיפור</p>
-                        <div class="honeycomb-flow d-flex justify-content-center flex-wrap gap-2">
-                            <div class="hex-item">
-                                <div
-                                    class="hex-inner bg-white d-flex align-items-center justify-content-center position-relative text-center px-2">
-                                    <span class="step-num position-absolute badge rounded-circle"
-                                        style="top: 15px; background: rgba(57, 161, 187, 0.2); color: #0D0431; font-weight: bold; border: 1px solid #39a1bb;">3</span>
-                                    <span class="step-text fw-bold text-dark fs-5 mt-3">עריכת וידאו</span>
+                            <!-- Phase 1 -->
+                            <div class="workflow-step py-4 py-md-5 position-relative">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="step-num fs-3 fw-bold text-center">01</div>
+                                    <div class="step-content flex-grow-1">
+                                        <h4 class="fw-bold fs-2 text-white mb-2">תחקיר</h4>
+                                        <p class="fs-5 opacity-75 text-white mb-0">הקשר הראשוני מול העד</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="hex-item">
-                                <div
-                                    class="hex-inner bg-white d-flex align-items-center justify-content-center position-relative text-center px-2">
-                                    <span class="step-num position-absolute badge rounded-circle"
-                                        style="top: 15px; background: rgba(57, 161, 187, 0.2); color: #0D0431; font-weight: bold; border: 1px solid #39a1bb;">4</span>
-                                    <span class="step-text fw-bold text-dark fs-5 mt-3 text-wrap">עריכת תוכן</span>
+                            <div class="workflow-step py-4 py-md-5 position-relative">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="step-num fs-3 fw-bold text-center">02</div>
+                                    <div class="step-content flex-grow-1">
+                                        <h4 class="fw-bold fs-2 text-white mb-2">צילום וריאיון</h4>
+                                        <p class="fs-5 opacity-75 text-white mb-0">המפגש האישי והתיעוד בשטח</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="hex-item">
-                                <div
-                                    class="hex-inner bg-white d-flex align-items-center justify-content-center position-relative text-center px-2">
-                                    <span class="step-num position-absolute badge rounded-circle"
-                                        style="top: 15px; background: rgba(57, 161, 187, 0.2); color: #0D0431; font-weight: bold; border: 1px solid #39a1bb;">5</span>
-                                    <span class="step-text fw-bold text-dark fs-5 mt-3">אישור העד</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Phase 3 -->
-                    <div class="mb-5 workflow-phase border-top border-secondary pt-4">
-                        <h3 class="fs-5 fw-bold text-highlight mb-2">שלב ג': הפצה ושימור</h3>
-                        <p class="mb-4 text-white opacity-75" style="font-size: 1.125rem;">תהליך ארגוני המבטיח שהעדות
-                            תישמר לדורות</p>
-                        <div class="honeycomb-flow d-flex justify-content-center flex-wrap gap-2">
-                            <div class="hex-item">
-                                <div
-                                    class="hex-inner bg-white d-flex align-items-center justify-content-center position-relative text-center px-2">
-                                    <span class="step-num position-absolute badge rounded-circle"
-                                        style="top: 15px; background: rgba(57, 161, 187, 0.2); color: #0D0431; font-weight: bold; border: 1px solid #39a1bb;">6</span>
-                                    <span class="step-text fw-bold text-dark fs-5 mt-3">אריזה</span>
+                            <!-- Phase 2 -->
+                            <div class="workflow-step py-4 py-md-5 position-relative">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="step-num fs-3 fw-bold text-center">03</div>
+                                    <div class="step-content flex-grow-1">
+                                        <h4 class="fw-bold fs-2 text-white mb-2">עריכת וידאו</h4>
+                                        <p class="fs-5 opacity-75 text-white mb-0">השלב שבו הופכים חומרי גלם לסיפור</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="hex-item">
-                                <div
-                                    class="hex-inner bg-white d-flex align-items-center justify-content-center position-relative text-center px-2">
-                                    <span class="step-num position-absolute badge rounded-circle"
-                                        style="top: 15px; background: rgba(57, 161, 187, 0.2); color: #0D0431; font-weight: bold; border: 1px solid #39a1bb;">7</span>
-                                    <span class="step-text fw-bold text-dark fs-5 mt-3 text-wrap">הכנה לפרסום</span>
+                            <div class="workflow-step py-4 py-md-5 position-relative">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="step-num fs-3 fw-bold text-center">04</div>
+                                    <div class="step-content flex-grow-1">
+                                        <h4 class="fw-bold fs-2 text-white mb-2">עריכת תוכן</h4>
+                                        <p class="fs-5 opacity-75 text-white mb-0">זיקוק הנרטיב והסיפור האישי</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="hex-item">
-                                <div
-                                    class="hex-inner bg-white d-flex align-items-center justify-content-center position-relative text-center px-2">
-                                    <span class="step-num position-absolute badge rounded-circle"
-                                        style="top: 15px; background: rgba(57, 161, 187, 0.2); color: #0D0431; font-weight: bold; border: 1px solid #39a1bb;">8</span>
-                                    <span class="step-text fw-bold text-dark fs-5 mt-3">פרסום</span>
+                            <div class="workflow-step py-4 py-md-5 position-relative">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="step-num fs-3 fw-bold text-center">05</div>
+                                    <div class="step-content flex-grow-1">
+                                        <h4 class="fw-bold fs-2 text-white mb-2">אישור העד</h4>
+                                        <p class="fs-5 opacity-75 text-white mb-0">תיקופים אחרונים מול מוסר העדות</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="hex-item">
-                                <div
-                                    class="hex-inner bg-white d-flex align-items-center justify-content-center position-relative text-center px-2">
-                                    <span class="step-num position-absolute badge rounded-circle"
-                                        style="top: 15px; background: rgba(57, 161, 187, 0.2); color: #0D0431; font-weight: bold; border: 1px solid #39a1bb;">9</span>
-                                    <span class="step-text fw-bold text-dark fs-5 mt-3 text-wrap">תמלול וארגון</span>
+
+                            <!-- Phase 3 -->
+                            <div class="workflow-step py-4 py-md-5 position-relative">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="step-num fs-3 fw-bold text-center">06</div>
+                                    <div class="step-content flex-grow-1">
+                                        <h4 class="fw-bold fs-2 text-white mb-2">אריזה</h4>
+                                        <p class="fs-5 opacity-75 text-white mb-0">תהליך ארגוני המבטיח שהעדות תישמר
+                                            לדורות</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="hex-item">
-                                <div
-                                    class="hex-inner bg-white d-flex align-items-center justify-content-center position-relative text-center px-2">
-                                    <span class="step-num position-absolute badge rounded-circle"
-                                        style="top: 15px; background: rgba(57, 161, 187, 0.2); color: #0D0431; font-weight: bold; border: 1px solid #39a1bb;">10</span>
-                                    <span class="step-text fw-bold text-dark fs-5 mt-3">ארכוב</span>
+                            <div class="workflow-step py-4 py-md-5 position-relative">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="step-num fs-3 fw-bold text-center">07</div>
+                                    <div class="step-content flex-grow-1">
+                                        <h4 class="fw-bold fs-2 text-white mb-2">הכנה לפרסום</h4>
+                                        <p class="fs-5 opacity-75 text-white mb-0">עיבוד סופי למדיה השונות</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="workflow-step py-4 py-md-5 position-relative">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="step-num fs-3 fw-bold text-center">08</div>
+                                    <div class="step-content flex-grow-1">
+                                        <h4 class="fw-bold fs-2 text-white mb-2">פרסום</h4>
+                                        <p class="fs-5 opacity-75 text-white mb-0">העלאה לפלטפורמות המקוונות</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="workflow-step py-4 py-md-5 position-relative">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="step-num fs-3 fw-bold text-center">09</div>
+                                    <div class="step-content flex-grow-1">
+                                        <h4 class="fw-bold fs-2 text-white mb-2">תמלול וארגון</h4>
+                                        <p class="fs-5 opacity-75 text-white mb-0">הכנת טקסטים מקבילים לארכיון</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="workflow-step py-4 py-md-5 mb-5 position-relative">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="step-num fs-3 fw-bold text-center">10</div>
+                                    <div class="step-content flex-grow-1">
+                                        <h4 class="fw-bold fs-2 text-white mb-2">ארכוב</h4>
+                                        <p class="fs-5 opacity-75 text-white mb-0">שמירה קבועה במאגר ההיסטורי</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
