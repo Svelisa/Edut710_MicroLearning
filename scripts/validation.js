@@ -42,7 +42,39 @@ function InitGroundingExercise() {
         }
 
         inputs.forEach(input => {
-            input.addEventListener('input', checkInputs);
+            // Wrap the input in a relative container
+            const wrapper = document.createElement('div');
+            wrapper.className = 'flex-grow-1';
+            input.parentNode.insertBefore(wrapper, input);
+            wrapper.appendChild(input);
+
+            // Create error message element specific to this input
+            const errorMsg = document.createElement('div');
+            errorMsg.className = 'validation-error-msg small fw-bold text-start w-100 mt-1';
+            errorMsg.style.color = '#FF6B6B';
+            errorMsg.style.display = 'none'; // hidden by default, takes no space
+            errorMsg.textContent = 'נא להזין טקסט בלבד (ללא מספרים או סימנים מיוחדים)';
+            
+            wrapper.appendChild(errorMsg);
+
+            let errorTimeout;
+
+            input.addEventListener('input', (e) => {
+                const originalValue = e.target.value;
+                const cleanedValue = originalValue.replace(/[^a-zA-Zא-ת\s\.,!?'"()\-]/g, '');
+                
+                if (originalValue !== cleanedValue) {
+                    errorMsg.style.display = 'block';
+                    
+                    if (errorTimeout) clearTimeout(errorTimeout);
+                    errorTimeout = setTimeout(() => {
+                        errorMsg.style.display = 'none';
+                    }, 2500);
+                }
+                
+                e.target.value = cleanedValue;
+                checkInputs();
+            });
         });
 
         nextBtn.addEventListener('click', () => {
@@ -203,161 +235,117 @@ function InitAccordion() {
  * ניהול אינטראקציית גרירה ב-unit2 (Drag & Drop + Tap to Drop for mobile)
  */
 function InitDragAndDrop() {
-    const wordBank = document.getElementById('word-bank');
     const scenariosContainer = document.getElementById('scenarios-container');
-    if (!wordBank || !scenariosContainer) return;
+    const wordBankWrapper = document.getElementById('word-bank-wrapper');
+    if (!wordBankWrapper || !scenariosContainer) return;
 
-    let selectedPrinciple = null;
-    let selectedElement = null;
+    const cards = Array.from(document.querySelectorAll('.scenario-card'));
+    const dropZones = document.querySelectorAll('.principle-bucket');
+    let isScenarioSelected = false;
 
-    const chips = document.querySelectorAll('.draggable-chip');
-    const dropZones = document.querySelectorAll('.drop-zone');
+    // Helper: Find current active card
+    function getActiveCard() {
+        return cards.find(card => !card.classList.contains('d-none'));
+    }
 
-    // פונקציית עזר להצלחה
-    function handleSuccess(zone, principleKey, text) {
+    // Handle clicking a scenario card
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            if (card.classList.contains('d-none')) return;
+            // Select this scenario
+            isScenarioSelected = true;
+            card.classList.add('selected-scenario');
+        });
+    });
+
+    // Helper for Success
+    function handleSuccess(zone, card) {
         zone.classList.remove('error-drop', 'drag-over');
         zone.classList.add('success-drop');
-        zone.innerHTML = `<span class="d-flex align-items-center gap-2">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            ${text}
-        </span>`;
-        // ביטול אירועים נוספים על האזור
-        zone.dataset.completed = "true";
+        isScenarioSelected = false;
+        
+        // Show success briefly on the bucket
+        const originalText = zone.innerHTML;
+        zone.innerHTML = `<h5 class="fw-bold mb-0 subtitle" style="color: #28a745;">נכון מאוד!</h5>`;
+        setTimeout(() => {
+            zone.innerHTML = originalText;
+            zone.classList.remove('success-drop');
+        }, 1000);
 
-        // חשיפה הדרגתית של השאלה הבאה
-        const currentCard = zone.closest('.scenario-card');
-        if (currentCard) {
-            const nextCard = currentCard.nextElementSibling;
-            if (nextCard && nextCard.classList.contains('scenario-card')) {
-                setTimeout(() => {
-                    nextCard.classList.remove('d-none');
-                    // גלילה חלקה לשאלה הבאה
-                    nextCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 400); // השהייה קלה לחווית משתמש נעימה
-            }
+        // Hide current card
+        card.classList.remove('selected-scenario');
+        card.classList.add('d-none');
+        card.dataset.completed = "true";
+
+        // Show next card
+        const nextCard = cards.find(c => c.dataset.completed !== "true" && c !== card);
+        if (nextCard) {
+            nextCard.classList.remove('d-none');
+            // Small animation for next card appearing
+            nextCard.style.opacity = '0';
+            nextCard.style.transform = 'translateY(10px)';
+            setTimeout(() => {
+                nextCard.style.transition = 'all 0.3s ease';
+                nextCard.style.opacity = '1';
+                nextCard.style.transform = 'translateY(0)';
+            }, 50);
+        } else {
+            // Finished!
+            scenariosContainer.innerHTML = `<div class="text-center p-5 bg-white rounded-4 shadow border border-2 w-100" style="border-color: #28a745 !important;">
+                <div class="fs-1 mb-3">🎉</div>
+                <h3 class="fw-bold text-success">כל הכבוד!</h3>
+                <p class="fs-5 mt-3 mb-0" style="color: #0D0431;">השלמתם את התרגיל בהצלחה והתאמתם את כל המצבים לעקרונות הנכונים.</p>
+            </div>`;
+            wordBankWrapper.classList.add('d-none'); // hide buckets
         }
     }
 
-    // פונקציית עזר לכישלון
-    function handleError(zone) {
+    // Helper for Error
+    function handleError(zone, card) {
         zone.classList.add('error-drop');
-        zone.classList.remove('drag-over');
+        if (card) card.classList.add('error-shake');
+        else zone.classList.add('error-shake'); // Shake zone if no card selected
+        
         setTimeout(() => {
             zone.classList.remove('error-drop');
+            if (card) card.classList.remove('error-shake');
+            zone.classList.remove('error-shake');
         }, 500);
     }
 
-    // --- אירועי Drag & Drop למחשב ---
-    chips.forEach(chip => {
-        chip.addEventListener('dragstart', (e) => {
-            chip.classList.add('dragging');
-            e.dataTransfer.setData('text/plain', chip.dataset.principle);
-            e.dataTransfer.setData('application/json', JSON.stringify({
-                key: chip.dataset.principle,
-                text: chip.innerText
-            }));
-            
-            // איפוס בחירה בלחיצה אם המשתמש בחר לגרור
-            if (selectedElement) {
-                selectedElement.classList.remove('selected');
-                selectedPrinciple = null;
-                selectedElement = null;
-            }
-        });
-
-        chip.addEventListener('dragend', () => {
-            chip.classList.remove('dragging');
-        });
-
-        // --- אירועי לחיצה לנייד ---
-        chip.addEventListener('click', () => {
-            // הסרת בחירה קודמת
-            chips.forEach(c => c.classList.remove('selected'));
-            
-            // בחירה נוכחית
-            chip.classList.add('selected');
-            selectedPrinciple = {
-                key: chip.dataset.principle,
-                text: chip.innerText
-            };
-            selectedElement = chip;
-            
-            // הדגשת אזורי גרירה פנויים כדי לסמן למשתמש איפה אפשר ללחוץ
-            dropZones.forEach(zone => {
-                if(zone.dataset.completed !== "true") {
-                    zone.classList.add('highlight');
-                }
-            });
-        });
-    });
-
+    // --- Tap Interaction for Mobile and Desktop ---
     dropZones.forEach(zone => {
-        // מניעת ברירת מחדל כדי לאפשר שחרור
-        zone.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            if (zone.dataset.completed !== "true") {
-                zone.classList.add('drag-over');
-            }
-        });
-
-        zone.addEventListener('dragleave', () => {
-            zone.classList.remove('drag-over');
-        });
-
-        zone.addEventListener('drop', (e) => {
-            e.preventDefault();
-            if (zone.dataset.completed === "true") return;
-
-            zone.classList.remove('drag-over');
-            try {
-                const dataRaw = e.dataTransfer.getData('application/json');
-                const data = JSON.parse(dataRaw);
-                const correctPrinciple = zone.dataset.correct;
-
-                if (data.key === correctPrinciple) {
-                    handleSuccess(zone, data.key, data.text);
-                } else {
-                    handleError(zone);
-                }
-            } catch (err) {
-                console.error("Drop Parse Error", err);
-            }
-        });
-
-        // אירוע לחיצה על אזור הגרירה (מיועד בעיקר לנייד)
         zone.addEventListener('click', () => {
-            if (zone.dataset.completed === "true") return;
-            
-            if (selectedPrinciple) {
-                const correctPrinciple = zone.dataset.correct;
-                
-                if (selectedPrinciple.key === correctPrinciple) {
-                    handleSuccess(zone, selectedPrinciple.key, selectedPrinciple.text);
-                } else {
-                    handleError(zone);
-                }
+            const activeCard = getActiveCard();
+            if (!activeCard) return;
 
-                // איפוס בחירה לאחר ניסיון התאמה
-                if (selectedElement) {
-                    selectedElement.classList.remove('selected');
-                }
-                selectedPrinciple = null;
-                selectedElement = null;
+            // Enforce "click to select" first
+            if (!isScenarioSelected) {
+                // Hint the user to select the scenario first
+                handleError(zone, null);
+                activeCard.classList.add('error-shake');
+                setTimeout(() => activeCard.classList.remove('error-shake'), 500);
+                return;
+            }
 
-                // הסרת הדגשה
-                dropZones.forEach(z => z.classList.remove('highlight'));
+            const correctPrinciple = activeCard.dataset.correct;
+            const targetPrinciple = zone.dataset.principle;
+
+            if (correctPrinciple === targetPrinciple) {
+                handleSuccess(zone, activeCard);
+            } else {
+                handleError(zone, activeCard);
             }
         });
     });
 
-    // הסרת בחירה אם לוחצים במקום אחר במסך
+    // Handle clicking outside to deselect
     document.addEventListener('click', (e) => {
-        if (!e.target.closest('.draggable-chip') && !e.target.closest('.drop-zone')) {
-            if (selectedElement) {
-                selectedElement.classList.remove('selected');
-                dropZones.forEach(z => z.classList.remove('highlight'));
-                selectedPrinciple = null;
-                selectedElement = null;
+        if (!e.target.closest('.scenario-card') && !e.target.closest('.principle-bucket')) {
+            const activeCard = getActiveCard();
+            if (activeCard && isScenarioSelected) {
+                isScenarioSelected = false;
+                activeCard.classList.remove('selected-scenario');
             }
         }
     });
@@ -405,7 +393,8 @@ function InitWorkflowScrollAnimation() {
             let progress = 0;
             
             // Distance from start trigger to bottom of container
-            const totalScrollDistance = containerRect.height;
+            // Subtracting viewportHeight * 0.5 ensures it reaches 100% before the user hits the bottom of the page
+            const totalScrollDistance = containerRect.height - viewportHeight * 0.5;
             const currentScroll = startScroll - containerRect.top;
             
             if (currentScroll > 0) {
