@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // אתחול אינטראקציית גרירה ב-unit2.html
     InitDragAndDrop();
+
+    // אתחול אנימציית גלילה (Workflow) ב-unit1.html
+    InitWorkflowScrollAnimation();
 });
 
 /**
@@ -73,33 +76,105 @@ function InitGroundingExercise() {
  * ניהול קרוסלת הצוות
  */
 function InitTeamCarousel() {
-    // נתוני חברי הצוות (בדומה ל-Props ברפרנס)
-    const teamMembers = [
-        { id: "1", name: "Emily Kim", role: "Founder", bio: "Visionary leader with 10+ years experience." },
-        { id: "2", name: "יוסי כהן", role: "רכז מתנדבים", bio: "מומחה בליווי ותמיכה רגשית." },
-        { id: "3", name: "מיכל לוי", role: "מנהלת תוכן", bio: "אחראית על שימור העדויות והנגשתן." }
-    ];
+    const carouselWrapper = document.getElementById('team3DCarousel');
+    if (!carouselWrapper) return;
 
-    const carouselEl = document.getElementById('teamCarousel');
-    if (!carouselEl) return;
+    const cards = Array.from(document.querySelectorAll('.team-3d-card'));
+    const prevBtn = document.getElementById('teamPrevBtn');
+    const nextBtn = document.getElementById('teamNextBtn');
+    const total = cards.length;
+    let currentIndex = 0;
 
-    // אתחול הקרוסלה של Bootstrap
-    const carousel = new bootstrap.Carousel(carouselEl, {
-        interval: 5000, // מעבר כל 5 שניות
-        pause: 'hover', // עצירה בזמן נגיעה - קריטי לגיל השלישי
-        wrap: true
+    const dynamicNameEl = document.getElementById('dynamicTeamName');
+    const dynamicRoleEl = document.getElementById('dynamicTeamRole');
+
+    function updateCarousel() {
+        cards.forEach((card, index) => {
+            card.className = 'team-3d-card'; // reset classes
+            let offset = index - currentIndex;
+
+            // Handle wrapping
+            if (offset < -Math.floor(total / 2)) offset += total;
+            if (offset > Math.floor(total / 2)) offset -= total;
+
+            if (offset === 0) {
+                card.classList.add('active');
+                // Update dynamic text for center card
+                if (dynamicNameEl) dynamicNameEl.textContent = card.dataset.name;
+                if (dynamicRoleEl) dynamicRoleEl.textContent = card.dataset.role;
+            }
+            else if (offset === -1) card.classList.add('prev-1');
+            else if (offset === 1) card.classList.add('next-1');
+            else if (offset === -2) card.classList.add('prev-2');
+            else if (offset === 2) card.classList.add('next-2');
+            else card.classList.add('hidden');
+        });
+    }
+
+    function moveNext() {
+        currentIndex = (currentIndex + 1) % total;
+        updateCarousel();
+    }
+
+    function movePrev() {
+        currentIndex = (currentIndex - 1 + total) % total;
+        updateCarousel();
+    }
+
+    if (nextBtn) nextBtn.addEventListener('click', moveNext);
+    if (prevBtn) prevBtn.addEventListener('click', movePrev);
+
+    // Click on a card to bring it to center
+    cards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+            if (currentIndex !== index) {
+                currentIndex = index;
+                updateCarousel();
+            }
+        });
     });
 
-    // מימוש אירוע שינוי (בדומה ל-onMemberChange)
-    carouselEl.addEventListener('slide.bs.carousel', (event) => {
-        const activeIndex = event.to;
-        const currentMember = teamMembers[activeIndex];
+    // Touch support (Swipe)
+    let startX = 0;
+    carouselWrapper.addEventListener('touchstart', (e) => {
+        startX = e.changedTouches[0].screenX;
+    }, { passive: true });
 
-        // הדפסה ללוג לצורך בקרה
-        if (currentMember) {
-            console.log('Active member:', currentMember.name);
-        }
-    });
+    carouselWrapper.addEventListener('touchend', (e) => {
+        let endX = e.changedTouches[0].screenX;
+        let diff = endX - startX;
+        if (diff > 50) movePrev(); // Swipe right -> prev
+        if (diff < -50) moveNext(); // Swipe left -> next
+    }, { passive: true });
+
+    // Expand Button Logic
+    const expandBtn = document.getElementById('teamExpandBtn');
+    if (expandBtn) {
+        expandBtn.addEventListener('click', () => {
+            const activeCard = document.querySelector('.team-3d-card.active');
+            if (!activeCard) return;
+
+            const name = activeCard.dataset.name;
+            const role = activeCard.dataset.role;
+            const imgEl = activeCard.querySelector('img');
+            const bioEl = activeCard.querySelector('.card-bio');
+
+            document.getElementById('modalTeamName').textContent = name || '';
+            document.getElementById('modalTeamRole').textContent = role || '';
+            if (imgEl) document.getElementById('modalTeamImg').src = imgEl.src;
+            if (bioEl) document.getElementById('modalTeamBio').textContent = bioEl.textContent;
+
+            // Use Bootstrap modal API to show the modal
+            const modalElement = document.getElementById('teamMemberModal');
+            if (window.bootstrap && modalElement) {
+                const modal = new bootstrap.Modal(modalElement);
+                modal.show();
+            }
+        });
+    }
+
+    // Initial update
+    updateCarousel();
 }
 
 /**
@@ -148,6 +223,19 @@ function InitDragAndDrop() {
         </span>`;
         // ביטול אירועים נוספים על האזור
         zone.dataset.completed = "true";
+
+        // חשיפה הדרגתית של השאלה הבאה
+        const currentCard = zone.closest('.scenario-card');
+        if (currentCard) {
+            const nextCard = currentCard.nextElementSibling;
+            if (nextCard && nextCard.classList.contains('scenario-card')) {
+                setTimeout(() => {
+                    nextCard.classList.remove('d-none');
+                    // גלילה חלקה לשאלה הבאה
+                    nextCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 400); // השהייה קלה לחווית משתמש נעימה
+            }
+        }
     }
 
     // פונקציית עזר לכישלון
@@ -273,4 +361,64 @@ function InitDragAndDrop() {
             }
         }
     });
+}
+
+/**
+ * Workflow Scroll Text Reveal Animation
+ */
+function InitWorkflowScrollAnimation() {
+    const steps = document.querySelectorAll('.workflow-step');
+    const progressLine = document.getElementById('workflow-progress');
+    const container = document.querySelector('.workflow-scroll-container');
+    
+    if (!steps.length) return;
+
+    // Intersection Observer to detect when a step is in the middle of the viewport
+    const observerOptions = {
+        root: null,
+        rootMargin: '-30% 0px -40% 0px', // Trigger when item is near the middle
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            } else {
+                entry.target.classList.remove('active');
+            }
+        });
+    }, observerOptions);
+
+    steps.forEach(step => observer.observe(step));
+
+    // Scroll event for the progress line
+    if (progressLine && container) {
+        window.addEventListener('scroll', () => {
+            const containerRect = container.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            
+            // Calculate how much of the container has been scrolled past
+            // Start progressing when the top of the container is near the middle of the screen
+            const startScroll = viewportHeight * 0.5; 
+            
+            let progress = 0;
+            
+            // Distance from start trigger to bottom of container
+            const totalScrollDistance = containerRect.height;
+            const currentScroll = startScroll - containerRect.top;
+            
+            if (currentScroll > 0) {
+                progress = (currentScroll / totalScrollDistance) * 100;
+            }
+            
+            // Clamp between 0 and 100
+            progress = Math.max(0, Math.min(100, progress));
+            
+            progressLine.style.height = `${progress}%`;
+        }, { passive: true });
+        
+        // Trigger once on load
+        window.dispatchEvent(new Event('scroll'));
+    }
 }
