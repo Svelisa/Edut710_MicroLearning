@@ -94,23 +94,27 @@
                 <div class="col-12 px-3 px-md-4 px-lg-5 text-center">
 
                     <!-- Section Title based on reference -->
-                    <h2 class="display-5 fw-bold mb-5 text-white" style="text-align: center;">מצפן אתי בעדות 710</h2>
+                    <h2 class="display-5 fw-bold mb-3 text-white" style="text-align: center;">המצפן שלנו:<br>עקרונות
+                        היסוד של עדות 710</h2>
+                    <p class="subtitle mx-auto mb-5 text-white" style="max-width: 600px; font-size: 1.1rem;">
+                        כדי להבטיח תיעוד מקצועי, רגיש והיסטורי, אנו פועלים לפי ארבעה עקרונות מנחים.
+                    </p>
 
                     <!-- CSS Grid Compass Layout -->
                     <div class="compass-grid">
-                        <div class="compass-north compass-text">נאמנות לסיפורו של העד ולמציאות שהתקיימה באותו יום</div>
+                        <div class="compass-north compass-text">העד<br>במרכז</div>
 
                         <!-- RTL: east is right side, visually -->
-                        <div class="compass-east compass-text">שמירה על גבולות אישיים שלנו</div>
+                        <div class="compass-east compass-text">שותפות<br>וערבות הדדית</div>
 
                         <div class="compass-center">
                             <img src="images/compass.svg" alt="מצפן האתיקה" draggable="false" class="img-fluid">
                         </div>
 
                         <!-- RTL: west is left side, visually -->
-                        <div class="compass-west compass-text">פרטיות וכבוד לגוף המת, הנפגע והחי</div>
+                        <div class="compass-west compass-text">תיעוד<br>ולא טיפול</div>
 
-                        <div class="compass-south compass-text">לא לפגוע</div>
+                        <div class="compass-south compass-text">מקצוענות ללא<br>פשרות</div>
                     </div>
 
                 </div>
@@ -125,132 +129,108 @@
                     <div class="text-center mb-5">
                         <h3 class="fw-bold text-white mb-3" style="font-size: 2rem;">לפניכם רשימה של מצבים שמתנדבים
                             עשויים להיתקל בהם.</h3>
-                        <p class="text-white subtitle p-3 rounded-4 shadow-sm"
-                            style="background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);">
-                            לכל מצב, <strong class="text-highlight">גררו ולחצו</strong> על העיקרון המתאים: האם הפעולה
+                        <div class="hint-box mt-3">
+                            לכל מצב, <strong>לחצו על התרחיש והתאימו אותו לעקרון</strong>: האם הפעולה
                             שומרת על המצפן האתי שלנו, או שהיא חורגת מהגבולות?
-                        </p>
+                        </div>
                     </div>
 
-                    <!-- Scenarios List -->
-                    <div class="scenarios-list d-flex flex-column gap-4" id="scenarios-container">
+                    <!-- Scenarios Stack (Draggables) -->
+                    <div id="scenarios-container" class="position-relative mx-auto mb-5"
+                        style="max-width: 600px; min-height: 180px;">
 
                         <!-- Scenario 1 -->
-                        <div class="scenario-card d-flex flex-column flex-md-row bg-white rounded-4 shadow-sm border border-1 overflow-hidden"
-                            style="border-color: #e6f2f9;">
-                            <div class="scenario-number bg-primary text-white d-flex align-items-center justify-content-center p-3 p-md-4 fs-2 fw-bold"
-                                style="min-width: 80px;">1</div>
-                            <div class="scenario-content p-4 flex-grow-1 d-flex flex-column justify-content-center">
-                                <p class="subtitle fw-bold mb-4" style="color: #0D0431;">לחיצה על העד להמשיך לדבר למרות
-                                    שהוא נראה מותש, כדי לא לבזבז זמן צילום.</p>
-                                <div class="drop-zone p-3 rounded-3 d-flex align-items-center justify-content-center"
-                                    data-correct="center"
-                                    style="border: 2px dashed #ccc; min-height: 60px; transition: all 0.2s;">
-                                    <span class="placeholder-text opacity-50">גררו לכאן את העיקרון</span>
-                                </div>
-                            </div>
+                        <div class="scenario-card unit-box flex-column position-absolute w-100 text-center"
+                            style="cursor: pointer; z-index: 6; min-height: 140px; border-radius: 12px; padding: 1.5rem; white-space: normal;"
+                            data-correct="center">
+                            <div class="fs-5 fw-bold mb-2" style="opacity: 0.7;">תרחיש 1</div>
+                            <p class="subtitle fw-bold mb-0 mx-auto" style="font-size: 1.2rem; color: var(--main-bg);">
+                                לחיצה על העד להמשיך לדבר למרות שהוא נראה מותש, כדי לא לבזבז זמן צילום.
+                            </p>
                         </div>
 
                         <!-- Scenario 2 -->
-                        <div class="scenario-card d-none d-flex flex-column flex-md-row bg-white rounded-4 shadow-sm border border-1 overflow-hidden"
-                            style="border-color: #e6f2f9;">
-                            <div class="scenario-number bg-primary text-white d-flex align-items-center justify-content-center p-3 p-md-4 fs-2 fw-bold"
-                                style="min-width: 80px;">2</div>
-                            <div class="scenario-content p-4 flex-grow-1 d-flex flex-column justify-content-center">
-                                <p class="subtitle fw-bold mb-4" style="color: #0D0431;">הקשבה שקטה ומכבדת גם ברגעים
-                                    שבהם העד בוכה או שוקע בזכרונות.</p>
-                                <div class="drop-zone p-3 rounded-3 d-flex align-items-center justify-content-center"
-                                    data-correct="documentation"
-                                    style="border: 2px dashed #ccc; min-height: 60px; transition: all 0.2s;">
-                                    <span class="placeholder-text opacity-50">גררו לכאן את העיקרון</span>
-                                </div>
-                            </div>
+                        <div class="scenario-card d-none unit-box flex-column position-absolute w-100 text-center"
+                            style="cursor: pointer; z-index: 5; min-height: 140px; border-radius: 12px; padding: 1.5rem; white-space: normal;"
+                            data-correct="documentation">
+                            <div class="fs-5 fw-bold mb-2" style="opacity: 0.7;">תרחיש 2</div>
+                            <p class="subtitle fw-bold mb-0 mx-auto" style="font-size: 1.2rem; color: var(--main-bg);">
+                                הקשבה שקטה ומכבדת גם ברגעים שבהם העד בוכה או שוקע בזכרונות.
+                            </p>
                         </div>
 
                         <!-- Scenario 3 -->
-                        <div class="scenario-card d-none d-flex flex-column flex-md-row bg-white rounded-4 shadow-sm border border-1 overflow-hidden"
-                            style="border-color: #e6f2f9;">
-                            <div class="scenario-number bg-primary text-white d-flex align-items-center justify-content-center p-3 p-md-4 fs-2 fw-bold"
-                                style="min-width: 80px;">3</div>
-                            <div class="scenario-content p-4 flex-grow-1 d-flex flex-column justify-content-center">
-                                <p class="subtitle fw-bold mb-4" style="color: #0D0431;">דיווח למנהל הצוות במידה והרגשתי
-                                    הצפה רגשית קשה לאחר עריכת עדות.</p>
-                                <div class="drop-zone p-3 rounded-3 d-flex align-items-center justify-content-center"
-                                    data-correct="partnership"
-                                    style="border: 2px dashed #ccc; min-height: 60px; transition: all 0.2s;">
-                                    <span class="placeholder-text opacity-50">גררו לכאן את העיקרון</span>
-                                </div>
-                            </div>
+                        <div class="scenario-card d-none unit-box flex-column position-absolute w-100 text-center"
+                            style="cursor: pointer; z-index: 4; min-height: 140px; border-radius: 12px; padding: 1.5rem; white-space: normal;"
+                            data-correct="partnership">
+                            <div class="fs-5 fw-bold mb-2" style="opacity: 0.7;">תרחיש 3</div>
+                            <p class="subtitle fw-bold mb-0 mx-auto" style="font-size: 1.2rem; color: var(--main-bg);">
+                                דיווח למנהל הצוות במידה והרגשתי הצפה רגשית קשה לאחר עריכת עדות.
+                            </p>
                         </div>
 
                         <!-- Scenario 4 -->
-                        <div class="scenario-card d-none d-flex flex-column flex-md-row bg-white rounded-4 shadow-sm border border-1 overflow-hidden"
-                            style="border-color: #e6f2f9;">
-                            <div class="scenario-number bg-primary text-white d-flex align-items-center justify-content-center p-3 p-md-4 fs-2 fw-bold"
-                                style="min-width: 80px;">4</div>
-                            <div class="scenario-content p-4 flex-grow-1 d-flex flex-column justify-content-center">
-                                <p class="subtitle fw-bold mb-4" style="color: #0D0431;">מתן עצות לעד על שיטות טיפול
-                                    שיכולות להקל על הכאב שלו.</p>
-                                <div class="drop-zone p-3 rounded-3 d-flex align-items-center justify-content-center"
-                                    data-correct="documentation"
-                                    style="border: 2px dashed #ccc; min-height: 60px; transition: all 0.2s;">
-                                    <span class="placeholder-text opacity-50">גררו לכאן את העיקרון</span>
-                                </div>
-                            </div>
+                        <div class="scenario-card d-none unit-box flex-column position-absolute w-100 text-center"
+                            style="cursor: pointer; z-index: 3; min-height: 140px; border-radius: 12px; padding: 1.5rem; white-space: normal;"
+                            data-correct="documentation">
+                            <div class="fs-5 fw-bold mb-2" style="opacity: 0.7;">תרחיש 4</div>
+                            <p class="subtitle fw-bold mb-0 mx-auto" style="font-size: 1.2rem; color: var(--main-bg);">
+                                מתן עצות לעד על שיטות טיפול שיכולות להקל על הכאב שלו.
+                            </p>
                         </div>
 
                         <!-- Scenario 5 -->
-                        <div class="scenario-card d-none d-flex flex-column flex-md-row bg-white rounded-4 shadow-sm border border-1 overflow-hidden"
-                            style="border-color: #e6f2f9;">
-                            <div class="scenario-number bg-primary text-white d-flex align-items-center justify-content-center p-3 p-md-4 fs-2 fw-bold"
-                                style="min-width: 80px;">5</div>
-                            <div class="scenario-content p-4 flex-grow-1 d-flex flex-column justify-content-center">
-                                <p class="subtitle fw-bold mb-4" style="color: #0D0431;">שיתוף פרטים מתוך העדות בקבוצת
-                                    הוואטסאפ או ברשתות החברתיות.</p>
-                                <div class="drop-zone p-3 rounded-3 d-flex align-items-center justify-content-center"
-                                    data-correct="professionalism"
-                                    style="border: 2px dashed #ccc; min-height: 60px; transition: all 0.2s;">
-                                    <span class="placeholder-text opacity-50">גררו לכאן את העיקרון</span>
-                                </div>
-                            </div>
+                        <div class="scenario-card d-none unit-box flex-column position-absolute w-100 text-center"
+                            style="cursor: pointer; z-index: 2; min-height: 140px; border-radius: 12px; padding: 1.5rem; white-space: normal;"
+                            data-correct="professionalism">
+                            <div class="fs-5 fw-bold mb-2" style="opacity: 0.7;">תרחיש 5</div>
+                            <p class="subtitle fw-bold mb-0 mx-auto" style="font-size: 1.2rem; color: var(--main-bg);">
+                                שיתוף פרטים מתוך העדות בקבוצת הוואטסאפ או ברשתות החברתיות.
+                            </p>
                         </div>
 
                         <!-- Scenario 6 -->
-                        <div class="scenario-card d-none d-flex flex-column flex-md-row bg-white rounded-4 shadow-sm border border-1 overflow-hidden"
-                            style="border-color: #e6f2f9;">
-                            <div class="scenario-number bg-primary text-white d-flex align-items-center justify-content-center p-3 p-md-4 fs-2 fw-bold"
-                                style="min-width: 80px;">6</div>
-                            <div class="scenario-content p-4 flex-grow-1 d-flex flex-column justify-content-center">
-                                <p class="subtitle fw-bold mb-4" style="color: #0D0431;">שיתוף פעולה והקשבה לצלם
-                                    ולמראיין שאיתי בשטח.</p>
-                                <div class="drop-zone p-3 rounded-3 d-flex align-items-center justify-content-center"
-                                    data-correct="partnership"
-                                    style="border: 2px dashed #ccc; min-height: 60px; transition: all 0.2s;">
-                                    <span class="placeholder-text opacity-50">גררו לכאן את העיקרון</span>
+                        <div class="scenario-card d-none unit-box flex-column position-absolute w-100 text-center"
+                            style="cursor: pointer; z-index: 1; min-height: 140px; border-radius: 12px; padding: 1.5rem; white-space: normal;"
+                            data-correct="partnership">
+                            <div class="fs-5 fw-bold mb-2" style="opacity: 0.7;">תרחיש 6</div>
+                            <p class="subtitle fw-bold mb-0 mx-auto" style="font-size: 1.2rem; color: var(--main-bg);">
+                                שיתוף פעולה והקשבה לצלם ולמראיין שאיתי בשטח.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Principle Buckets (Drop Zones) -->
+                    <div id="word-bank-wrapper" class="word-bank-container mt-4">
+                        <div class="row g-3 justify-content-center">
+                            <div class="col-6">
+                                <div class="drop-zone principle-bucket bg-white rounded-4 p-3 shadow-sm border border-2 d-flex align-items-center justify-content-center text-center h-100"
+                                    data-principle="center"
+                                    style="border-color: #e6f2f9 !important; min-height: 100px; transition: all 0.2s;">
+                                    <h5 class="fw-bold mb-0 subtitle" style="color: #0D0431;">העד במרכז</h5>
                                 </div>
                             </div>
-                        </div>
-
-                    </div>
-                    
-                    <!-- Draggable Word Bank -->
-                    <div id="word-bank-wrapper"
-                        class="word-bank-container bg-white p-3 p-md-4 rounded-4 shadow-sm mt-5 position-sticky border border-2"
-                        style="bottom: 20px; z-index: 100; border-color: #39a1bb !important;">
-                        <h5 class="fw-bold mb-3 text-center subtitle" style="color: #0D0431;">משכו או לחצו לבחירה:</h5>
-                        <div class="d-flex flex-wrap justify-content-center gap-2 gap-md-3" id="word-bank">
-                            <div class="draggable-chip subtitle px-3 py-2 rounded-pill bg-light border fw-bold text-center"
-                                draggable="true" data-principle="center" style="cursor: grab; color: #0D0431;">העד במרכז
+                            <div class="col-6">
+                                <div class="drop-zone principle-bucket bg-white rounded-4 p-3 shadow-sm border border-2 d-flex align-items-center justify-content-center text-center h-100"
+                                    data-principle="partnership"
+                                    style="border-color: #e6f2f9 !important; min-height: 100px; transition: all 0.2s;">
+                                    <h5 class="fw-bold mb-0 subtitle" style="color: #0D0431;">שותפות וערבות הדדית</h5>
+                                </div>
                             </div>
-                            <div class="draggable-chip subtitle px-3 py-2 rounded-pill bg-light border fw-bold text-center"
-                                draggable="true" data-principle="partnership" style="cursor: grab; color: #0D0431;">
-                                שותפות וערבות הדדית</div>
-                            <div class="draggable-chip subtitle px-3 py-2 rounded-pill bg-light border fw-bold text-center"
-                                draggable="true" data-principle="documentation" style="cursor: grab; color: #0D0431;">
-                                תיעוד ולא טיפול</div>
-                            <div class="draggable-chip subtitle px-3 py-2 rounded-pill bg-light border fw-bold text-center"
-                                draggable="true" data-principle="professionalism" style="cursor: grab; color: #0D0431;">
-                                מקצוענות ללא פשרות</div>
+                            <div class="col-6">
+                                <div class="drop-zone principle-bucket bg-white rounded-4 p-3 shadow-sm border border-2 d-flex align-items-center justify-content-center text-center h-100"
+                                    data-principle="documentation"
+                                    style="border-color: #e6f2f9 !important; min-height: 100px; transition: all 0.2s;">
+                                    <h5 class="fw-bold mb-0 subtitle" style="color: #0D0431;">תיעוד ולא טיפול</h5>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="drop-zone principle-bucket bg-white rounded-4 p-3 shadow-sm border border-2 d-flex align-items-center justify-content-center text-center h-100"
+                                    data-principle="professionalism"
+                                    style="border-color: #e6f2f9 !important; min-height: 100px; transition: all 0.2s;">
+                                    <h5 class="fw-bold mb-0 subtitle" style="color: #0D0431;">מקצוענות ללא פשרות</h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
