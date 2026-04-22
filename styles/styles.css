@@ -71,6 +71,8 @@ body {
 header {
     background-color: var(--main-bg);
     z-index: 1000;
+    position: sticky;
+    top: 0;
 }
 
 .desktop-nav {
@@ -82,6 +84,44 @@ header {
     font-size: 1.1rem;
     font-weight: 600;
     transition: color 0.3s ease;
+}
+
+/* =========================================
+    Mobile Menu (Offcanvas)
+   ========================================= */
+.custom-menu {
+    background-color: var(--main-bg) !important;
+    color: var(--text-main);
+    width: 280px !important;
+}
+
+.senior-nav .nav-link {
+    color: var(--text-main);
+    padding: 15px 20px;
+    font-size: 20px;
+    border-bottom: 1px solid #e8e8e8;
+    transition: background 0.3s;
+}
+
+.senior-nav .main-item {
+    font-family: 'Assistant', sans-serif;
+}
+
+.senior-nav .sub-item {
+    font-size: 18px;
+    padding-right: 35px;
+    opacity: 0.9;
+}
+
+.text-highlight {
+    color: var(--highlight) !important;
+    font-size: 18px;
+    padding-top: 20px !important;
+}
+
+.senior-nav .nav-link:hover {
+    background-color: rgba(57, 161, 187, 0.2);
+    color: var(--text-main);
 }
 
 /* =========================================
@@ -275,13 +315,13 @@ hr.section-divider {
 .compass-east {
     grid-column: 1;
     grid-row: 2;
-    text-align: left;
+    text-align: center;
 }
 
 .compass-west {
     grid-column: 3;
     grid-row: 2;
-    text-align: right;
+    text-align: center;
 }
 
 .compass-center {
@@ -347,8 +387,20 @@ hr.section-divider {
    ========================================= */
 @media (max-width: 576px) {
     .compass-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto auto auto;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0.5rem;
+        margin: 2rem auto;
+    }
+
+    .compass-center img {
+        width: 90px;
+    }
+
+    .compass-text {
+        font-size: 1rem;
+        max-width: 110px;
     }
 
     .compass-north,
@@ -356,8 +408,7 @@ hr.section-divider {
     .compass-center,
     .compass-west,
     .compass-south {
-        grid-column: 1;
-        text-align: center;
+        max-width: 100%;
     }
 }
 
@@ -413,8 +464,18 @@ hr.section-divider {
     Additional Components (Resilience, Contact, etc)
    ========================================= */
 .hint-box {
-    background-color: #C6E0E5;
-    color: var(--main-bg);
+    background-color: #C6E0E5 !important;
+    color: #0D0431 !important;
+    display: inline-block;
+    padding: 1rem 1.5rem !important;
+    /* px-4 py-3 */
+    border-radius: 0.5rem !important;
+    /* rounded-3 */
+    font-size: 1.1rem !important;
+    max-width: 600px;
+    margin: 0 auto 2rem auto !important;
+    text-align: center;
+    font-weight: 500;
 }
 
 .custom-check-list li::before {
@@ -558,7 +619,7 @@ hr.section-divider {
     bottom: 10vh;
     right: 94px;
     width: 2px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1) 15%, rgba(255, 255, 255, 0.1) 85%, transparent);
     z-index: 0;
 }
 
@@ -567,7 +628,8 @@ hr.section-divider {
     top: 0;
     left: 0;
     width: 100%;
-    height: 0%; /* Will be updated via JS */
+    height: 0%;
+    /* Will be updated via JS */
     background: linear-gradient(to bottom, rgba(136, 221, 251, 0), #88DDFB);
     border-radius: 2px;
 }
@@ -615,19 +677,19 @@ hr.section-divider {
         padding-top: 5vh;
         padding-bottom: 5vh;
     }
-    
+
     .workflow-timeline-wrapper {
         top: 5vh;
         bottom: 5vh;
         right: 80px;
     }
-    
+
     .workflow-step {
         opacity: 0.3;
         transform: translateY(20px);
         min-height: auto;
     }
-    
+
     .workflow-step.active {
         opacity: 1;
         transform: translateY(0);
@@ -638,8 +700,45 @@ hr.section-divider {
     .workflow-timeline-wrapper {
         right: 104px;
     }
-    
+
     .step-content {
         padding-right: 100px;
     }
 }
+/* =========================================
+    Drag & Drop Inverted (Unit 2)
+   ========================================= */
+.principle-bucket {
+    cursor: pointer;
+}
+.drag-over {
+    border-color: #39a1bb !important;
+    background-color: #f0f9fc !important;
+    transform: scale(1.02);
+}
+.success-drop {
+    border-color: #28a745 !important;
+    background-color: #e8f5e9 !important;
+}
+.dragging {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+@keyframes errorShake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+.error-shake {
+    animation: errorShake 0.4s ease-in-out;
+    border-color: #FF6B6B !important;
+}
+
+.selected-scenario {
+    box-shadow: 0 0 15px rgba(57, 161, 187, 0.8) !important;
+    transform: scale(1.02);
+    transition: all 0.2s;
+}
+
+
+
