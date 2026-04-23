@@ -18,6 +18,22 @@ body {
     min-height: 100vh;
 }
 
+h1,
+.h1,
+.exercise-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--text-main);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+h2,
+.h2,
+.section-title {
+    font-size: 24px;
+}
+
 #startup-app,
 #exercise-app {
     overflow-x: hidden;
@@ -190,7 +206,7 @@ h3 {
 
 hr.section-divider {
     border-top: 2px solid var(--highlight);
-    margin: 2.5rem auto;
+    margin: 4rem auto;
     width: 100%;
 }
 
@@ -609,14 +625,14 @@ hr.section-divider {
 
 .workflow-steps-col {
     /* Create empty space at start and end so first and last items can reach the center */
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
 }
 
 .workflow-timeline-wrapper {
     position: absolute;
-    top: 10vh;
-    bottom: 10vh;
+    top: 2vh;
+    bottom: 2vh;
     right: 94px;
     width: 2px;
     background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1) 15%, rgba(255, 255, 255, 0.1) 85%, transparent);
@@ -705,30 +721,48 @@ hr.section-divider {
         padding-right: 100px;
     }
 }
+
 /* =========================================
     Drag & Drop Inverted (Unit 2)
    ========================================= */
 .principle-bucket {
     cursor: pointer;
 }
+
 .drag-over {
     border-color: #39a1bb !important;
     background-color: #f0f9fc !important;
     transform: scale(1.02);
 }
+
 .success-drop {
     border-color: #28a745 !important;
     background-color: #e8f5e9 !important;
 }
+
 .dragging {
     opacity: 0.5;
     transform: scale(0.95);
 }
+
 @keyframes errorShake {
-    0%, 100% { transform: translateX(0); }
-    20%, 60% { transform: translateX(-5px); }
-    40%, 80% { transform: translateX(5px); }
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20%,
+    60% {
+        transform: translateX(-5px);
+    }
+
+    40%,
+    80% {
+        transform: translateX(5px);
+    }
 }
+
 .error-shake {
     animation: errorShake 0.4s ease-in-out;
     border-color: #FF6B6B !important;
@@ -740,5 +774,30 @@ hr.section-divider {
     transition: all 0.2s;
 }
 
+/* =========================================
+    Goal Item Accordion (Unit 1 & 2)
+   ========================================= */
+.goal-item {
+    cursor: pointer;
+}
 
+.goal-item[aria-expanded="true"] .goal-plus .vertical-line {
+    transform: scaleY(0);
+}
 
+.goal-plus .vertical-line {
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+/* =========================================
+    Goal Placeholders
+   ========================================= */
+.icon-placeholder {
+    width: 28px;
+    height: 28px;
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    flex-shrink: 0;
+    display: inline-block;
+}
