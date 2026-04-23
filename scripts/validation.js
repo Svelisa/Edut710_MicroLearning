@@ -232,56 +232,83 @@ function InitAccordion() {
 }
 
 /**
- * ניהול אינטראקציית גרירה ב-unit2 (Drag & Drop + Tap to Drop for mobile)
+ * ניהול אינטראקציית תרחישים ב-unit2 (בחירה יחידה) עם Modal
  */
 function InitDragAndDrop() {
     const scenariosContainer = document.getElementById('scenarios-container');
     const wordBankWrapper = document.getElementById('word-bank-wrapper');
-    if (!wordBankWrapper || !scenariosContainer) return;
+    const feedbackModalEl = document.getElementById('feedbackModal');
+    
+    if (!wordBankWrapper || !scenariosContainer || !feedbackModalEl) return;
 
     const cards = Array.from(document.querySelectorAll('.scenario-card'));
-    const dropZones = document.querySelectorAll('.principle-bucket');
-    let isScenarioSelected = false;
+    const options = document.querySelectorAll('.principle-bucket');
+    let feedbackModal = null;
+    
+    // Check if bootstrap is defined
+    if (typeof bootstrap !== 'undefined') {
+        feedbackModal = new bootstrap.Modal(feedbackModalEl);
+    }
+
+    const modalTitle = document.getElementById('feedbackModalTitle');
+    const modalIcon = document.getElementById('feedbackModalIcon');
+    const modalText = document.getElementById('feedbackModalText');
+
+    let activeCardToAdvance = null;
 
     // Helper: Find current active card
     function getActiveCard() {
         return cards.find(card => !card.classList.contains('d-none'));
     }
 
-    // Handle clicking a scenario card
-    cards.forEach(card => {
-        card.addEventListener('click', () => {
-            if (card.classList.contains('d-none')) return;
-            // Select this scenario
-            isScenarioSelected = true;
-            card.classList.add('selected-scenario');
+    // Handle Option Click
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            const activeCard = getActiveCard();
+            if (!activeCard || !feedbackModal) return;
+
+            const correctPrinciple = activeCard.dataset.correct;
+            const targetPrinciple = option.dataset.principle;
+            
+            activeCardToAdvance = activeCard;
+
+            if (correctPrinciple === targetPrinciple) {
+                // Correct
+                modalTitle.textContent = "נכון מאוד!";
+                modalTitle.style.color = "#28a745";
+                modalIcon.innerHTML = "✅";
+                modalText.textContent = activeCard.dataset.feedbackCorrect || "כל הכבוד, ענית נכון!";
+                
+                option.classList.add('success-drop');
+                setTimeout(() => option.classList.remove('success-drop'), 500);
+            } else {
+                // Incorrect
+                modalTitle.textContent = "טעות בבחירה";
+                modalTitle.style.color = "#dc3545";
+                modalIcon.innerHTML = "❌";
+                modalText.textContent = activeCard.dataset.feedbackIncorrect || "הבחירה שגויה. ננסה שוב בתרחיש הבא.";
+                
+                option.classList.add('error-drop', 'error-shake');
+                setTimeout(() => option.classList.remove('error-drop', 'error-shake'), 500);
+            }
+
+            feedbackModal.show();
         });
+        
+        option.style.cursor = 'pointer';
     });
 
-    // Helper for Success
-    function handleSuccess(zone, card) {
-        zone.classList.remove('error-drop', 'drag-over');
-        zone.classList.add('success-drop');
-        isScenarioSelected = false;
+    // Advance to next scenario when modal is closed
+    feedbackModalEl.addEventListener('hidden.bs.modal', () => {
+        if (!activeCardToAdvance) return;
         
-        // Show success briefly on the bucket
-        const originalText = zone.innerHTML;
-        zone.innerHTML = `<h5 class="fw-bold mb-0 subtitle" style="color: #28a745;">נכון מאוד!</h5>`;
-        setTimeout(() => {
-            zone.innerHTML = originalText;
-            zone.classList.remove('success-drop');
-        }, 1000);
-
-        // Hide current card
-        card.classList.remove('selected-scenario');
+        const card = activeCardToAdvance;
         card.classList.add('d-none');
         card.dataset.completed = "true";
 
-        // Show next card
         const nextCard = cards.find(c => c.dataset.completed !== "true" && c !== card);
         if (nextCard) {
             nextCard.classList.remove('d-none');
-            // Small animation for next card appearing
             nextCard.style.opacity = '0';
             nextCard.style.transform = 'translateY(10px)';
             setTimeout(() => {
@@ -294,60 +321,12 @@ function InitDragAndDrop() {
             scenariosContainer.innerHTML = `<div class="text-center p-5 bg-white rounded-4 shadow border border-2 w-100" style="border-color: #28a745 !important;">
                 <div class="fs-1 mb-3">🎉</div>
                 <h3 class="fw-bold text-success">כל הכבוד!</h3>
-                <p class="fs-5 mt-3 mb-0" style="color: #0D0431;">השלמתם את התרגיל בהצלחה והתאמתם את כל המצבים לעקרונות הנכונים.</p>
+                <p class="fs-5 mt-3 mb-0" style="color: #0D0431;">השלמתם את התרגיל וקראתם את כל ההסברים לעקרונות המנחים שלנו.</p>
             </div>`;
-            wordBankWrapper.classList.add('d-none'); // hide buckets
+            wordBankWrapper.classList.add('d-none');
         }
-    }
-
-    // Helper for Error
-    function handleError(zone, card) {
-        zone.classList.add('error-drop');
-        if (card) card.classList.add('error-shake');
-        else zone.classList.add('error-shake'); // Shake zone if no card selected
         
-        setTimeout(() => {
-            zone.classList.remove('error-drop');
-            if (card) card.classList.remove('error-shake');
-            zone.classList.remove('error-shake');
-        }, 500);
-    }
-
-    // --- Tap Interaction for Mobile and Desktop ---
-    dropZones.forEach(zone => {
-        zone.addEventListener('click', () => {
-            const activeCard = getActiveCard();
-            if (!activeCard) return;
-
-            // Enforce "click to select" first
-            if (!isScenarioSelected) {
-                // Hint the user to select the scenario first
-                handleError(zone, null);
-                activeCard.classList.add('error-shake');
-                setTimeout(() => activeCard.classList.remove('error-shake'), 500);
-                return;
-            }
-
-            const correctPrinciple = activeCard.dataset.correct;
-            const targetPrinciple = zone.dataset.principle;
-
-            if (correctPrinciple === targetPrinciple) {
-                handleSuccess(zone, activeCard);
-            } else {
-                handleError(zone, activeCard);
-            }
-        });
-    });
-
-    // Handle clicking outside to deselect
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.scenario-card') && !e.target.closest('.principle-bucket')) {
-            const activeCard = getActiveCard();
-            if (activeCard && isScenarioSelected) {
-                isScenarioSelected = false;
-                activeCard.classList.remove('selected-scenario');
-            }
-        }
+        activeCardToAdvance = null;
     });
 }
 
