@@ -86,18 +86,14 @@ function InitGroundingExercise() {
                     nextEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             } else {
-                const mainEl = document.querySelector('main');
-                if (mainEl) {
-                    Array.from(mainEl.children).forEach(child => {
-                        if (child.id !== 'step-summary') {
-                            child.classList.add('d-none');
-                        }
-                    });
+                const currentStep = document.getElementById(step.id);
+                if (currentStep) {
+                    currentStep.classList.add('d-none');
                 }
                 const summaryEl = document.getElementById('step-summary');
                 if (summaryEl) {
                     summaryEl.classList.remove('d-none');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    summaryEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
             }
         });
