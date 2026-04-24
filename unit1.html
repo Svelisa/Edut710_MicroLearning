@@ -43,12 +43,12 @@
                         <a href="index.html" class="nav-link text-decoration-none">ראשי</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-decoration-none" href="#" role="button"
+                        <a class="nav-link dropdown-toggle text-decoration-none active" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             יחידות לימוד
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="unit1.html">מי אנחנו?</a></li>
+                            <li><a class="dropdown-item active" href="unit1.html">מי אנחנו?</a></li>
                             <li><a class="dropdown-item" href="unit2.html">גבולות ואתיקה</a></li>
                             <li><a class="dropdown-item" href="unit3.html">חוסן</a></li>
                         </ul>
@@ -81,7 +81,7 @@
                 </div>
             </header>
 
-            <main class="container py-4">
+            <main class="content-area py-4 px-3 px-md-5 mx-auto" style="max-width: 1200px;">
 
                 <!-- About Section -->
                 <div class="text-center mb-5">
@@ -115,14 +115,16 @@
                 <div class="text-center mb-5">
                     <h2 class="mb-3">למה אנחנו כאן?</h2>
 
-                    <div class="hint-box">
-                        לחצו על התמונה לצפייה
+                    <div class="mb-4">
+                        <span class="d-inline-block px-4 py-2" style="background-color: #C6E0E5; color: #0D0431; font-weight: 500; border-radius: 8px; font-size: 1.1rem;">
+                            לחצו על הסרטון לצפייה
+                        </span>
                     </div>
 
-                    <div class="video-placeholder mx-auto">
-                        <div class="play-button-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Video Placeholder (Vimeo embed will go here) -->
+                    <div class="video-placeholder mx-auto position-relative" style="max-width: 800px; aspect-ratio: 16/9; border-radius: 16px; border: 2px solid #ffffff; background-color: #1a1528; overflow: hidden; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+                        <div style="width: 80px; height: 80px; background: rgba(0,0,0,0.6); border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 5px;">
                                 <polygon points="5 3 19 12 5 21 5 3"></polygon>
                             </svg>
                         </div>
@@ -303,6 +305,28 @@
                                     </svg>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- Inspiration Section -->
+                <div class="text-center mb-5">
+                    <h2 class="mb-3">השראה - פרופסור דורי לאוב</h2>
+                    
+                    <div class="mb-4">
+                        <span class="d-inline-block px-4 py-2" style="background-color: #C6E0E5; color: #0D0431; font-weight: 500; border-radius: 8px; font-size: 1.1rem;">
+                            לחצו על הסרטון לצפייה
+                        </span>
+                    </div>
+
+                    <!-- Video Placeholder (Vimeo embed will go here) -->
+                    <div class="video-placeholder mx-auto position-relative" style="max-width: 800px; aspect-ratio: 16/9; border-radius: 16px; border: 2px solid #ffffff; background-color: #1a1528; overflow: hidden; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+                        <div style="width: 80px; height: 80px; background: rgba(0,0,0,0.6); border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 5px;">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
                         </div>
                     </div>
                 </div>
@@ -871,6 +895,14 @@
             </main>
         </div>
     </div>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container text-center py-4">
+            <p class="mb-0 fw-bold fs-5">פוטר אתר עדות 710</p>
+            <small class="opacity-75">מקום שמור לתוכן עתידי</small>
+        </div>
+    </footer>
 
     <!-- Offcanvas Menu -->
     <div class="offcanvas offcanvas-start custom-menu" tabindex="-1" id="mainOffcanvas"
