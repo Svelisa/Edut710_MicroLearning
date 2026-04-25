@@ -927,6 +927,11 @@ hr.section-divider {
     transition: transform 0.3s ease;
 }
 
+.goal-plus svg {
+    width: 48px;
+    height: 48px;
+}
+
 /* =========================================
     Goal Placeholders
    ========================================= */
@@ -1050,4 +1055,20 @@ hr.section-divider {
     line-height: 1.4;
     flex-grow: 1;
     overflow-y: auto;
+}
+
+/* Custom scrollbar to indicate scrollability on mobile */
+.flip-card-back-text::-webkit-scrollbar {
+    width: 6px;
+}
+
+.flip-card-back-text::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    margin: 4px 0;
+}
+
+.flip-card-back-text::-webkit-scrollbar-thumb {
+    background: var(--highlight);
+    border-radius: 4px;
 }
