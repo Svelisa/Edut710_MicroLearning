@@ -84,7 +84,7 @@
 
             <main class="content-area py-4 px-3 px-md-5 mx-auto" style="max-width: 1200px;">
                 <section class="container my-5">
-                    <div class="row w-100 mx-auto max-width-1000 mt-5">
+                    <div class="row mx-auto mt-5" style="max-width: 1000px;">
                         <div class="col-12 px-3 px-md-4 px-lg-5 text-center">
 
                             <!-- Section Title based on reference -->
@@ -118,8 +118,8 @@
 
                 <!-- Scenarios Drag & Drop Section -->
                 <section class="container my-5 max-width-1000">
-                    <div class="row">
-                        <div class="col-12 px-3 px-md-4">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-10 col-xl-8 px-3 px-md-4">
 
                             <div class="text-center mb-5">
                                 <h3 class="fw-bold text-white mb-3" style="font-size: 2rem;">לפניכם רשימה של מצבים
@@ -395,19 +395,18 @@
                 <!-- Feedback Modal -->
                 <div class="modal fade" id="feedbackModal" tabindex="-1" aria-hidden="true" dir="rtl">
                     <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content border-0 shadow-lg rounded-4">
+                        <div class="modal-content" style="background-color: #0B0428; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
                             <div class="modal-header border-0 d-flex justify-content-center position-relative pb-0">
-                                <h4 class="modal-title fw-bold" id="feedbackModalTitle"></h4>
-                                <button type="button" class="btn-close position-absolute start-0 ms-3 mt-3 top-0"
-                                    data-bs-dismiss="modal" aria-label="סגור"></button>
+                                <h4 class="modal-title fw-bold text-white" id="feedbackModalTitle"></h4>
+                                <button type="button" class="btn-close btn-close-white position-absolute start-0 ms-3 mt-3 top-0"
+                                    data-bs-dismiss="modal" aria-label="סגור" style="width: 48px; height: 48px; background-size: 24px; margin: 0;"></button>
                             </div>
-                            <div class="modal-body text-center pt-3 pb-4">
+                            <div class="modal-body text-center pt-3 pb-4 text-white">
                                 <div id="feedbackModalIcon" class="mb-3" style="font-size: 3rem;"></div>
-                                <p id="feedbackModalText" class="fs-5 mb-0" style="color: var(--main-bg);"></p>
+                                <p id="feedbackModalText" class="fs-5 mb-0" style="opacity: 0.9;"></p>
                             </div>
                             <div class="modal-footer border-0 d-flex justify-content-center pt-0 pb-4">
-                                <button type="button" class="btn submit-btn w-50" data-bs-dismiss="modal"
-                                    style="background-color: var(--secondary-blue); color: white;">המשך לתרחיש
+                                <button type="button" class="btn bg-white text-dark fw-bold rounded-pill px-5 py-2 fs-5" data-bs-dismiss="modal">המשך לתרחיש
                                     הבא</button>
                             </div>
                         </div>
