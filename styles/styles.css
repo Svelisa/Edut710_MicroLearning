@@ -44,6 +44,11 @@ h2,
     margin-bottom: 1rem;
 }
 
+h3,
+.h3 {
+    font-family: 'Assistant', sans-serif !important;
+}
+
 #startup-app,
 #exercise-app {
     overflow-x: hidden;
@@ -1071,4 +1076,23 @@ hr.section-divider {
 .flip-card-back-text::-webkit-scrollbar-thumb {
     background: var(--highlight);
     border-radius: 4px;
+}
+
+/* Fixed height for uniqueness modal text to prevent carousel jumping */
+.uniqueness-modal-text {
+    max-width: 600px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    min-height: 150px;
+}
+@media (max-width: 768px) {
+    .uniqueness-modal-text {
+        min-height: 220px;
+    }
+}
+@media (max-width: 480px) {
+    .uniqueness-modal-text {
+        min-height: 260px;
+    }
 }
