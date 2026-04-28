@@ -51,7 +51,7 @@ h3,
 
 #startup-app,
 #exercise-app {
-    overflow-x: hidden;
+    overflow-x: clip;
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -371,39 +371,16 @@ hr.section-divider {
     align-items: center;
     text-decoration: none;
     background-color: var(--highlight);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
+    box-shadow: 0 4px 20px rgba(136, 221, 251, 0.5);
+    border: 1px solid rgba(136, 221, 251, 0.5);
 }
 
 .animated-card:hover,
 .animated-card:active {
     transform: translateY(-5px);
-}
-
-.animated-card::before {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(from 0deg, var(--main-bg) 0%, #ffffff 50%, var(--main-bg) 100%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1;
-}
-
-.animated-card:hover::before,
-.animated-card:active::before {
-    animation: rotateBorder 1.5s linear infinite;
-    opacity: 1;
-}
-
-.animated-card::after {
-    content: "";
-    position: absolute;
-    inset: 3px;
-    background: var(--highlight);
-    border-radius: 13px;
-    z-index: 2;
+    background-color: #ffffff;
 }
 
 .animated-card-content {
@@ -421,16 +398,6 @@ hr.section-divider {
     aspect-ratio: auto;
     min-height: 90px;
     max-width: 100%;
-}
-
-@keyframes rotateBorder {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
 }
 
 /* =========================================
@@ -634,7 +601,7 @@ hr.section-divider {
     border-radius: 0.5rem !important;
     /* rounded-3 */
     font-size: 1.1rem !important;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto 2rem auto !important;
     text-align: center;
     font-weight: 500;
@@ -985,7 +952,7 @@ hr.section-divider {
 .flip-card {
     background-color: transparent;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 340px;
     perspective: 1000px;
     cursor: pointer;
 }
@@ -1095,4 +1062,66 @@ hr.section-divider {
     .uniqueness-modal-text {
         min-height: 260px;
     }
+}
+
+/* ==========================================================================
+   Desktop Re-design Styles for 65+ Audience (Accessibility & Readability)
+   ========================================================================== */
+
+/* Limiting line width for readable paragraphs on large screens */
+@media (min-width: 992px) {
+    .content-paragraph {
+        max-width: 100ch; /* ~100 characters per line (increased by 33% per user request) */
+        font-size: 1.25rem !important; /* 20px */
+        line-height: 1.8 !important;
+        color: #e2e8f0; /* Light text for dark background */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .large-btn-desktop {
+        padding: 1rem 3rem !important;
+        font-size: 1.3rem !important;
+    }
+    
+    .section-title-desktop {
+        font-size: 4rem !important;
+        margin-bottom: 2rem !important;
+    }
+}
+
+/* Gentle hover interaction without confusing movement */
+.transition-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.transition-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3) !important;
+    background-color: rgba(255,255,255,0.1) !important;
+}
+
+/* Finish Unit Button */
+.btn-finish-unit {
+    background-color: var(--main-bg) !important;
+    color: #ffffff !important;
+    transition: all 0.2s ease;
+}
+.btn-finish-unit:hover {
+    background-color: var(--secondary-blue) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2) !important;
+}
+
+/* Desktop Sidebar Styles */
+.desktop-sidebar-item {
+    transition: all 0.2s ease;
+}
+.desktop-sidebar-item:hover {
+    padding-right: 10px;
+}
+
+/* Site Footer */
+.site-footer {
+    background-color: var(--main-bg);
+    color: #ffffff;
 }
