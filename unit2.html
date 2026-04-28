@@ -13,6 +13,7 @@
 
     <!-- Bootstrap 5 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <!-- Custom CSS -->
     <link href="styles/reset.css" rel="stylesheet" />
@@ -82,340 +83,414 @@
                 </div>
             </header>
 
-            <main class="content-area py-4 px-3 px-md-5 mx-auto" style="max-width: 1200px;">
-                <section class="container my-5">
-                    <div class="row mx-auto mt-5" style="max-width: 1000px;">
-                        <div class="col-12 px-3 px-md-4 px-lg-5 text-center">
+            <main class="content-area py-4 px-3 px-md-5 mx-auto w-100" style="max-width: 1700px;">
+                <div class="row gx-5">
 
-                            <!-- Section Title based on reference -->
-                            <h1 class="exercise-title">המצפן שלנו:<br>עקרונות היסוד של עדות 710</h1>
-                            <p class="subtitle mx-auto mb-5 text-white" style="max-width: 600px; font-size: 1.1rem;">
-                                כדי להבטיח תיעוד מקצועי, רגיש והיסטורי, אנו פועלים לפי ארבעה עקרונות מנחים.
+                    <!-- Main Content -->
+                    <div class="col-12 col-lg-9">
+                        <section class="container my-5">
+                            <div class="row mx-auto mt-5" style="max-width: 1200px;">
+                                <div class="col-12 px-3 px-md-4 px-lg-5 text-start">
+
+                                    <!-- Section Title based on reference -->
+                                    <h1 class="exercise-title section-title-desktop mb-3">המצפן שלנו:<br>עקרונות היסוד של
+                                        עדות 710</h1>
+                                    <p class="subtitle content-paragraph mb-5 text-white">
+                                        כדי להבטיח תיעוד מקצועי, רגיש והיסטורי, אנו פועלים לפי ארבעה עקרונות מנחים.
+                                    </p>
+
+                                    <!-- CSS Grid Compass Layout -->
+                                    <div class="compass-grid">
+                                        <div class="compass-north compass-text">העד<br>במרכז</div>
+
+                                        <!-- RTL: east is right side, visually -->
+                                        <div class="compass-east compass-text">שותפות<br>וערבות הדדית</div>
+
+                                        <div class="compass-center">
+                                            <img src="images/compass.svg" alt="מצפן האתיקה" draggable="false"
+                                                class="img-fluid">
+                                        </div>
+
+                                        <!-- RTL: west is left side, visually -->
+                                        <div class="compass-west compass-text">תיעוד<br>ולא טיפול</div>
+
+                                        <div class="compass-south compass-text">מקצוענות ללא<br>פשרות</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- Scenarios Drag & Drop Section -->
+                        <section class="container my-5" style="max-width: 1200px;">
+                            <div class="row justify-content-start">
+                                <div class="col-12 col-lg-10 col-xl-8 px-3 px-md-4">
+
+                                    <div class="text-start mb-5">
+                                        <h3 class="fw-bold text-white mb-3" style="font-size: 2rem;">לפניכם רשימה של
+                                            מצבים
+                                            שמתנדבים
+                                            עשויים להיתקל בהם.</h3>
+                                        <div class="hint-box mt-3">
+                                            לכל מצב, <strong>בחרו את העקרון המתאים</strong> מהאפשרויות מטה: האם הפעולה
+                                            שומרת על המצפן האתי שלנו, או שהיא חורגת מהגבולות?
+                                        </div>
+                                    </div>
+
+                                    <!-- Scenarios Stack (Draggables) -->
+                                    <div id="scenarios-container" class="position-relative mx-auto mb-5"
+                                        style="max-width: 600px; min-height: 180px;">
+
+                                        <!-- Scenario 1 -->
+                                        <div class="scenario-card unit-box flex-column position-absolute w-100 text-center"
+                                            style="z-index: 6; min-height: 140px; border-radius: 12px; padding: 1.5rem; white-space: normal;"
+                                            data-correct="center"
+                                            data-feedback-correct="נכון מאוד! העיקרון 'העד במרכז' אומר שרווחת העד והקצב שלו קודמים לכל הישג תיעודי. אין להאיץ בו או ללחוץ עליו בשום שלב."
+                                            data-feedback-incorrect="טעות. הפעולה הזו נוגדת את העיקרון 'העד במרכז'. רווחת העד והקצב שלו תמיד קודמים לכל הישג תיעודי או אילוץ זמנים.">
+                                            <div class="fw-bold mb-2" style="font-size: 24px;">תרחיש 1 מתוך 6</div>
+                                            <p class="subtitle mb-0 mx-auto"
+                                                style="font-size: 18px; color: var(--main-bg);">
+                                                לחיצה על העד להמשיך לדבר למרות שהוא נראה מותש, כדי לא לבזבז זמן צילום.
+                                            </p>
+                                        </div>
+
+                                        <!-- Scenario 2 -->
+                                        <div class="scenario-card d-none unit-box flex-column position-absolute w-100 text-center"
+                                            style="z-index: 5; min-height: 140px; border-radius: 12px; padding: 1.5rem; white-space: normal;"
+                                            data-correct="documentation"
+                                            data-feedback-correct="נכון מאוד! לפי העיקרון 'תיעוד ולא טיפול', תפקידנו להקשיב ולהכיל, אך לא להתערב באופן טיפולי. הקשבה שקטה היא בדיוק הפעולה המצופה."
+                                            data-feedback-incorrect="טעות. התשובה הנכונה היא 'תיעוד ולא טיפול'. תפקידנו הוא לאפשר לעד את המרחב הרגשי שלו להעיד, תוך הקשבה שקטה ומכבדת ללא התערבות.">
+                                            <div class="fw-bold mb-2" style="font-size: 24px;">תרחיש 2 מתוך 6</div>
+                                            <p class="subtitle mb-0 mx-auto"
+                                                style="font-size: 18px; color: var(--main-bg);">
+                                                הקשבה שקטה ומכבדת גם ברגעים שבהם העד בוכה או שוקע בזכרונות.
+                                            </p>
+                                        </div>
+
+                                        <!-- Scenario 3 -->
+                                        <div class="scenario-card d-none unit-box flex-column position-absolute w-100 text-center"
+                                            style="z-index: 4; min-height: 140px; border-radius: 12px; padding: 1.5rem; white-space: normal;"
+                                            data-correct="partnership"
+                                            data-feedback-correct="נכון מאוד! העיקרון 'שותפות וערבות הדדית' חל גם פנימה - עלינו לתמוך ולהיתמך בחברי הצוות ובמנהלים כדי לעבד את הקושי."
+                                            data-feedback-incorrect="טעות. התשובה הנכונה היא 'שותפות וערבות הדדית'. הצוות הוא רשת התמיכה שלכם. חשוב לשתף כשקשה ולא להישאר עם המועקה לבד.">
+                                            <div class="fw-bold mb-2" style="font-size: 24px;">תרחיש 3 מתוך 6</div>
+                                            <p class="subtitle mb-0 mx-auto"
+                                                style="font-size: 18px; color: var(--main-bg);">
+                                                דיווח למנהל הצוות במידה והרגשתי הצפה רגשית קשה לאחר עריכת עדות.
+                                            </p>
+                                        </div>
+
+                                        <!-- Scenario 4 -->
+                                        <div class="scenario-card d-none unit-box flex-column position-absolute w-100 text-center"
+                                            style="z-index: 3; min-height: 140px; border-radius: 12px; padding: 1.5rem; white-space: normal;"
+                                            data-correct="documentation"
+                                            data-feedback-correct="נכון מאוד! הפעולה הזו מפרה את העיקרון 'תיעוד ולא טיפול'. אנחנו לא אנשי מקצוע טיפוליים ולכן אל לנו להשיא עצות רפואיות או פסיכולוגיות."
+                                            data-feedback-incorrect="טעות. הפעולה מפרה את העיקרון 'תיעוד ולא טיפול'. מכיוון שאיננו מטפלים, אסור לנו בשום אופן לתת עצות טיפוליות, גם אם הכוונה טובה.">
+                                            <div class="fw-bold mb-2" style="font-size: 24px;">תרחיש 4 מתוך 6</div>
+                                            <p class="subtitle mb-0 mx-auto"
+                                                style="font-size: 18px; color: var(--main-bg);">
+                                                מתן עצות לעד על שיטות טיפול שיכולות להקל על הכאב שלו.
+                                            </p>
+                                        </div>
+
+                                        <!-- Scenario 5 -->
+                                        <div class="scenario-card d-none unit-box flex-column position-absolute w-100 text-center"
+                                            style="z-index: 2; min-height: 140px; border-radius: 12px; padding: 1.5rem; white-space: normal;"
+                                            data-correct="professionalism"
+                                            data-feedback-correct="נכון מאוד! הדלפת מידע או שיתופו מפרה את עיקרון 'מקצוענות ללא פשרות', שדורש שמירה קפדנית על סודיות ופרטיות העד."
+                                            data-feedback-incorrect="טעות. שיתוף כזה מפר את עיקרון 'מקצוענות ללא פשרות'. עלינו להקפיד על סודיות מוחלטת ועל כבודם ופרטיותם של העדים.">
+                                            <div class="fw-bold mb-2" style="font-size: 24px;">תרחיש 5 מתוך 6</div>
+                                            <p class="subtitle mb-0 mx-auto"
+                                                style="font-size: 18px; color: var(--main-bg);">
+                                                שיתוף פרטים מתוך העדות בקבוצת הוואטסאפ או ברשתות החברתיות.
+                                            </p>
+                                        </div>
+
+                                        <!-- Scenario 6 -->
+                                        <div class="scenario-card d-none unit-box flex-column position-absolute w-100 text-center"
+                                            style="z-index: 1; min-height: 140px; border-radius: 12px; padding: 1.5rem; white-space: normal;"
+                                            data-correct="partnership"
+                                            data-feedback-correct="נכון מאוד! 'שותפות וערבות הדדית' מתבטאת בעבודת צוות הרמונית ומכבדת בשטח, שמבטיחה תיעוד איכותי ותומך."
+                                            data-feedback-incorrect="טעות. התשובה הנכונה היא 'שותפות וערבות הדדית'. עבודה משותפת, הקשבה וכבוד הדדי בתוך הצוות הם בסיס הכרחי להצלחת התיעוד.">
+                                            <div class="fw-bold mb-2" style="font-size: 24px;">תרחיש 6 מתוך 6</div>
+                                            <p class="subtitle mb-0 mx-auto"
+                                                style="font-size: 18px; color: var(--main-bg);">
+                                                שיתוף פעולה והקשבה לצלם ולמראיין שאיתי בשטח.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Principle Buckets (Drop Zones) -->
+                                    <div id="word-bank-wrapper" class="word-bank-container mt-4">
+                                        <div class="row g-3 justify-content-center">
+                                            <div class="col-6 col-md-3">
+                                                <div class="drop-zone principle-bucket bg-white rounded-4 p-3 shadow-sm border border-2 d-flex align-items-center justify-content-center text-center h-100"
+                                                    data-principle="center"
+                                                    style="border-color: #e6f2f9 !important; min-height: 100px; transition: all 0.2s;">
+                                                    <h5 class="mb-0 subtitle" style="color: #0D0431; font-size: 18px;">
+                                                        העד במרכז
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-md-3">
+                                                <div class="drop-zone principle-bucket bg-white rounded-4 p-3 shadow-sm border border-2 d-flex align-items-center justify-content-center text-center h-100"
+                                                    data-principle="partnership"
+                                                    style="border-color: #e6f2f9 !important; min-height: 100px; transition: all 0.2s;">
+                                                    <h5 class="mb-0 subtitle" style="color: #0D0431; font-size: 18px;">
+                                                        שותפות
+                                                        וערבות
+                                                        הדדית</h5>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-md-3">
+                                                <div class="drop-zone principle-bucket bg-white rounded-4 p-3 shadow-sm border border-2 d-flex align-items-center justify-content-center text-center h-100"
+                                                    data-principle="documentation"
+                                                    style="border-color: #e6f2f9 !important; min-height: 100px; transition: all 0.2s;">
+                                                    <h5 class="mb-0 subtitle" style="color: #0D0431; font-size: 18px;">
+                                                        תיעוד ולא
+                                                        טיפול
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="drop-zone principle-bucket bg-white rounded-4 p-3 shadow-sm border border-2 d-flex align-items-center justify-content-center text-center h-100"
+                                                    data-principle="professionalism"
+                                                    style="border-color: #e6f2f9 !important; min-height: 100px; transition: all 0.2s;">
+                                                    <h5 class="mb-0 subtitle" style="color: #0D0431; font-size: 18px;">
+                                                        מקצוענות
+                                                        ללא
+                                                        פשרות</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <hr class="section-divider">
+
+
+                        <!-- Theory to Practice Section -->
+                        <div class="text-start mb-5" style="max-width: 1200px;">
+                            <h2 class="mb-3">מהלכה למעשה: פועלים לפי המצפן</h2>
+                            <p class="fs-5 mb-4" style="color: #ffffff; opacity: 0.9;">
+                                האתיקה של 'עדות 710' מורכבת מפרטים קטנים שעושים הבדל גדול.
                             </p>
-
-                            <!-- CSS Grid Compass Layout -->
-                            <div class="compass-grid">
-                                <div class="compass-north compass-text">העד<br>במרכז</div>
-
-                                <!-- RTL: east is right side, visually -->
-                                <div class="compass-east compass-text">שותפות<br>וערבות הדדית</div>
-
-                                <div class="compass-center">
-                                    <img src="images/compass.svg" alt="מצפן האתיקה" draggable="false" class="img-fluid">
-                                </div>
-
-                                <!-- RTL: west is left side, visually -->
-                                <div class="compass-west compass-text">תיעוד<br>ולא טיפול</div>
-
-                                <div class="compass-south compass-text">מקצוענות ללא<br>פשרות</div>
+                            <div class="hint-box">
+                                לחצו על כל נושא כדי לראות איך שומרים על הגבולות בכל שלב.
                             </div>
 
-                        </div>
-                    </div>
-                </section>
-
-                <hr class="section-divider">
-
-                <!-- Scenarios Drag & Drop Section -->
-                <section class="container my-5 max-width-1000">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-lg-10 col-xl-8 px-3 px-md-4">
-
-                            <div class="text-center mb-5">
-                                <h3 class="fw-bold text-white mb-3" style="font-size: 2rem;">לפניכם רשימה של מצבים
-                                    שמתנדבים
-                                    עשויים להיתקל בהם.</h3>
-                                <div class="hint-box mt-3">
-                                    לכל מצב, <strong>בחרו את העקרון המתאים</strong> מהאפשרויות מטה: האם הפעולה
-                                    שומרת על המצפן האתי שלנו, או שהיא חורגת מהגבולות?
-                                </div>
-                            </div>
-
-                            <!-- Scenarios Stack (Draggables) -->
-                            <div id="scenarios-container" class="position-relative mx-auto mb-5"
-                                style="max-width: 600px; min-height: 180px;">
-
-                                <!-- Scenario 1 -->
-                                <div class="scenario-card unit-box flex-column position-absolute w-100 text-center"
-                                    style="z-index: 6; min-height: 140px; border-radius: 12px; padding: 1.5rem; white-space: normal;"
-                                    data-correct="center"
-                                    data-feedback-correct="נכון מאוד! העיקרון 'העד במרכז' אומר שרווחת העד והקצב שלו קודמים לכל הישג תיעודי. אין להאיץ בו או ללחוץ עליו בשום שלב."
-                                    data-feedback-incorrect="טעות. הפעולה הזו נוגדת את העיקרון 'העד במרכז'. רווחת העד והקצב שלו תמיד קודמים לכל הישג תיעודי או אילוץ זמנים.">
-                                    <div class="fw-bold mb-2" style="font-size: 24px;">תרחיש 1 מתוך 6</div>
-                                    <p class="subtitle mb-0 mx-auto" style="font-size: 18px; color: var(--main-bg);">
-                                        לחיצה על העד להמשיך לדבר למרות שהוא נראה מותש, כדי לא לבזבז זמן צילום.
-                                    </p>
-                                </div>
-
-                                <!-- Scenario 2 -->
-                                <div class="scenario-card d-none unit-box flex-column position-absolute w-100 text-center"
-                                    style="z-index: 5; min-height: 140px; border-radius: 12px; padding: 1.5rem; white-space: normal;"
-                                    data-correct="documentation"
-                                    data-feedback-correct="נכון מאוד! לפי העיקרון 'תיעוד ולא טיפול', תפקידנו להקשיב ולהכיל, אך לא להתערב באופן טיפולי. הקשבה שקטה היא בדיוק הפעולה המצופה."
-                                    data-feedback-incorrect="טעות. התשובה הנכונה היא 'תיעוד ולא טיפול'. תפקידנו הוא לאפשר לעד את המרחב הרגשי שלו להעיד, תוך הקשבה שקטה ומכבדת ללא התערבות.">
-                                    <div class="fw-bold mb-2" style="font-size: 24px;">תרחיש 2 מתוך 6</div>
-                                    <p class="subtitle mb-0 mx-auto" style="font-size: 18px; color: var(--main-bg);">
-                                        הקשבה שקטה ומכבדת גם ברגעים שבהם העד בוכה או שוקע בזכרונות.
-                                    </p>
-                                </div>
-
-                                <!-- Scenario 3 -->
-                                <div class="scenario-card d-none unit-box flex-column position-absolute w-100 text-center"
-                                    style="z-index: 4; min-height: 140px; border-radius: 12px; padding: 1.5rem; white-space: normal;"
-                                    data-correct="partnership"
-                                    data-feedback-correct="נכון מאוד! העיקרון 'שותפות וערבות הדדית' חל גם פנימה - עלינו לתמוך ולהיתמך בחברי הצוות ובמנהלים כדי לעבד את הקושי."
-                                    data-feedback-incorrect="טעות. התשובה הנכונה היא 'שותפות וערבות הדדית'. הצוות הוא רשת התמיכה שלכם. חשוב לשתף כשקשה ולא להישאר עם המועקה לבד.">
-                                    <div class="fw-bold mb-2" style="font-size: 24px;">תרחיש 3 מתוך 6</div>
-                                    <p class="subtitle mb-0 mx-auto" style="font-size: 18px; color: var(--main-bg);">
-                                        דיווח למנהל הצוות במידה והרגשתי הצפה רגשית קשה לאחר עריכת עדות.
-                                    </p>
-                                </div>
-
-                                <!-- Scenario 4 -->
-                                <div class="scenario-card d-none unit-box flex-column position-absolute w-100 text-center"
-                                    style="z-index: 3; min-height: 140px; border-radius: 12px; padding: 1.5rem; white-space: normal;"
-                                    data-correct="documentation"
-                                    data-feedback-correct="נכון מאוד! הפעולה הזו מפרה את העיקרון 'תיעוד ולא טיפול'. אנחנו לא אנשי מקצוע טיפוליים ולכן אל לנו להשיא עצות רפואיות או פסיכולוגיות."
-                                    data-feedback-incorrect="טעות. הפעולה מפרה את העיקרון 'תיעוד ולא טיפול'. מכיוון שאיננו מטפלים, אסור לנו בשום אופן לתת עצות טיפוליות, גם אם הכוונה טובה.">
-                                    <div class="fw-bold mb-2" style="font-size: 24px;">תרחיש 4 מתוך 6</div>
-                                    <p class="subtitle mb-0 mx-auto" style="font-size: 18px; color: var(--main-bg);">
-                                        מתן עצות לעד על שיטות טיפול שיכולות להקל על הכאב שלו.
-                                    </p>
-                                </div>
-
-                                <!-- Scenario 5 -->
-                                <div class="scenario-card d-none unit-box flex-column position-absolute w-100 text-center"
-                                    style="z-index: 2; min-height: 140px; border-radius: 12px; padding: 1.5rem; white-space: normal;"
-                                    data-correct="professionalism"
-                                    data-feedback-correct="נכון מאוד! הדלפת מידע או שיתופו מפרה את עיקרון 'מקצוענות ללא פשרות', שדורש שמירה קפדנית על סודיות ופרטיות העד."
-                                    data-feedback-incorrect="טעות. שיתוף כזה מפר את עיקרון 'מקצוענות ללא פשרות'. עלינו להקפיד על סודיות מוחלטת ועל כבודם ופרטיותם של העדים.">
-                                    <div class="fw-bold mb-2" style="font-size: 24px;">תרחיש 5 מתוך 6</div>
-                                    <p class="subtitle mb-0 mx-auto" style="font-size: 18px; color: var(--main-bg);">
-                                        שיתוף פרטים מתוך העדות בקבוצת הוואטסאפ או ברשתות החברתיות.
-                                    </p>
-                                </div>
-
-                                <!-- Scenario 6 -->
-                                <div class="scenario-card d-none unit-box flex-column position-absolute w-100 text-center"
-                                    style="z-index: 1; min-height: 140px; border-radius: 12px; padding: 1.5rem; white-space: normal;"
-                                    data-correct="partnership"
-                                    data-feedback-correct="נכון מאוד! 'שותפות וערבות הדדית' מתבטאת בעבודת צוות הרמונית ומכבדת בשטח, שמבטיחה תיעוד איכותי ותומך."
-                                    data-feedback-incorrect="טעות. התשובה הנכונה היא 'שותפות וערבות הדדית'. עבודה משותפת, הקשבה וכבוד הדדי בתוך הצוות הם בסיס הכרחי להצלחת התיעוד.">
-                                    <div class="fw-bold mb-2" style="font-size: 24px;">תרחיש 6 מתוך 6</div>
-                                    <p class="subtitle mb-0 mx-auto" style="font-size: 18px; color: var(--main-bg);">
-                                        שיתוף פעולה והקשבה לצלם ולמראיין שאיתי בשטח.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Principle Buckets (Drop Zones) -->
-                            <div id="word-bank-wrapper" class="word-bank-container mt-4">
-                                <div class="row g-3 justify-content-center">
-                                    <div class="col-6">
-                                        <div class="drop-zone principle-bucket bg-white rounded-4 p-3 shadow-sm border border-2 d-flex align-items-center justify-content-center text-center h-100"
-                                            data-principle="center"
-                                            style="border-color: #e6f2f9 !important; min-height: 100px; transition: all 0.2s;">
-                                            <h5 class="mb-0 subtitle" style="color: #0D0431; font-size: 18px;">העד במרכז
+                            <!-- Custom Accordion -->
+                            <div class="goals-accordion text-start mt-4">
+                                <!-- Item 1 -->
+                                <div class="goal-item" data-bs-toggle="collapse" href="#collapseOne" role="button"
+                                    aria-expanded="false" aria-controls="collapseOne">
+                                    <div
+                                        class="d-flex justify-content-between align-items-center py-3 border-bottom border-secondary">
+                                        <span class="fs-5 fw-normal text-start w-100">הסכמה וזכויות</span>
+                                        <div class="goal-plus flex-shrink-0 ms-3">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
+                                                stroke-width="1.5">
+                                                <line class="vertical-line" x1="12" y1="5" x2="12" y2="19"></line>
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="collapse goal-collapse" id="collapseOne">
+                                        <div class="py-3 text-start" style="font-size: 1.125rem; opacity: 1;">
+                                            <h5 class="mb-3 fw-bold" style="color: #88DDFB; opacity: 1;">העדות שייכת לעד
                                             </h5>
+                                            <p class="mb-2">לפני שמתחילים להקליט, חשוב לזכור:<br>העד הוא הריבון על
+                                                הסיפור שלו.
+                                            </p>
+                                            <p class="mb-2">חובה להחתים את העד על טופס הסכמה מדעת ולהסביר לו שהחומר
+                                                מיועד למחקר
+                                                ולתיעוד היסטורי.</p>
+                                            <p class="mb-2">ללא חתימה – לא ניתן להשתמש בחומרים.</p>
+                                            <p class="mb-0">שימו לב: אם העד מתחרט באמצע, אנחנו עוצרים מיד. הרצון שלו
+                                                קודם
+                                                לצילום.
+                                            </p>
                                         </div>
                                     </div>
-                                    <div class="col-6">
-                                        <div class="drop-zone principle-bucket bg-white rounded-4 p-3 shadow-sm border border-2 d-flex align-items-center justify-content-center text-center h-100"
-                                            data-principle="partnership"
-                                            style="border-color: #e6f2f9 !important; min-height: 100px; transition: all 0.2s;">
-                                            <h5 class="mb-0 subtitle" style="color: #0D0431; font-size: 18px;">שותפות
-                                                וערבות
-                                                הדדית</h5>
+                                </div>
+
+                                <!-- Item 2 -->
+                                <div class="goal-item" data-bs-toggle="collapse" href="#collapseTwo" role="button"
+                                    aria-expanded="false" aria-controls="collapseTwo">
+                                    <div
+                                        class="d-flex justify-content-between align-items-center py-3 border-bottom border-secondary">
+                                        <span class="fs-5 fw-normal text-start w-100">סודיות ופרטיות</span>
+                                        <div class="goal-plus flex-shrink-0 ms-3">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
+                                                stroke-width="1.5">
+                                                <line class="vertical-line" x1="12" y1="5" x2="12" y2="19"></line>
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            </svg>
                                         </div>
                                     </div>
-                                    <div class="col-6">
-                                        <div class="drop-zone principle-bucket bg-white rounded-4 p-3 shadow-sm border border-2 d-flex align-items-center justify-content-center text-center h-100"
-                                            data-principle="documentation"
-                                            style="border-color: #e6f2f9 !important; min-height: 100px; transition: all 0.2s;">
-                                            <h5 class="mb-0 subtitle" style="color: #0D0431; font-size: 18px;">תיעוד ולא
-                                                טיפול
+                                    <div class="collapse goal-collapse" id="collapseTwo">
+                                        <div class="py-3 text-start" style="font-size: 1.125rem; opacity: 1;">
+                                            <h5 class="mb-3 fw-bold" style="color: #88DDFB; opacity: 1;">העדות היא
+                                                פיקדון בידינו
                                             </h5>
+                                            <p class="mb-2">החומרים שאנו נחשפים אליהם הם רגישים ופרטיים.</p>
+                                            <p class="mb-2">חל איסור מוחלט לשתף קטעי גלם, תמונות מהעריכה או סיפורים
+                                                אישיים
+                                                ברשתות
+                                                החברתיות או בקבוצות משפחתיות.</p>
+                                            <p class="mb-2">הדיסקרטיות שלכם היא הביטחון של העדים.</p>
+                                            <p class="mb-0">שומרים על סודיות גם בבית – הסיפורים נשארים בתוך מערכות
+                                                הארגון
+                                                המאובטחות.
+                                            </p>
                                         </div>
                                     </div>
-                                    <div class="col-6">
-                                        <div class="drop-zone principle-bucket bg-white rounded-4 p-3 shadow-sm border border-2 d-flex align-items-center justify-content-center text-center h-100"
-                                            data-principle="professionalism"
-                                            style="border-color: #e6f2f9 !important; min-height: 100px; transition: all 0.2s;">
-                                            <h5 class="mb-0 subtitle" style="color: #0D0431; font-size: 18px;">מקצוענות
-                                                ללא
-                                                פשרות</h5>
+                                </div>
+
+                                <!-- Item 3 -->
+                                <div class="goal-item" data-bs-toggle="collapse" href="#collapseThree" role="button"
+                                    aria-expanded="false" aria-controls="collapseThree">
+                                    <div
+                                        class="d-flex justify-content-between align-items-center py-3 border-bottom border-secondary">
+                                        <span class="fs-5 fw-normal text-start w-100">גבולות הזיכרון</span>
+                                        <div class="goal-plus flex-shrink-0 ms-3">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
+                                                stroke-width="1.5">
+                                                <line class="vertical-line" x1="12" y1="5" x2="12" y2="19"></line>
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="collapse goal-collapse" id="collapseThree">
+                                        <div class="py-3 text-start" style="font-size: 1.125rem; opacity: 1;">
+                                            <h5 class="mb-3 fw-bold" style="color: #88DDFB; opacity: 1;">אנחנו מראה, לא
+                                                עורכים
+                                            </h5>
+                                            <p class="mb-2">תפקידנו הוא לתעד את העדות כפי שהיא נמסרת.</p>
+                                            <p class="mb-2">גם אם העד טועה בתאריך, בשם של מקום או בפרט היסטורי - אנחנו
+                                                לא מתקנים
+                                                אותו.</p>
+                                            <p class="mb-2">הבלבול והכאב הם חלק בלתי נפרד מהזיכרון האותנטי.</p>
+                                            <p class="mb-0">הימנעו מהבעת דעה אישית או פוליטית במהלך המפגש. תנו לעד את כל
+                                                הבמה.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Item 4 -->
+                                <div class="goal-item" data-bs-toggle="collapse" href="#collapseFour" role="button"
+                                    aria-expanded="false" aria-controls="collapseFour">
+                                    <div
+                                        class="d-flex justify-content-between align-items-center py-3 border-bottom border-secondary">
+                                        <span class="fs-5 fw-normal text-start w-100">התנהלות בשטח</span>
+                                        <div class="goal-plus flex-shrink-0 ms-3">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
+                                                stroke-width="1.5">
+                                                <line class="vertical-line" x1="12" y1="5" x2="12" y2="19"></line>
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="collapse goal-collapse" id="collapseFour">
+                                        <div class="py-3 text-start" style="font-size: 1.125rem; opacity: 1;">
+                                            <h5 class="mb-3 fw-bold" style="color: #88DDFB; opacity: 1;">אורחים בתוך
+                                                הכאב</h5>
+                                            <p class="mb-2">תפקידנו הוא לתעד את העדות כפי שהיא נמסרת.</p>
+                                            <p class="mb-2">גם אם העד טועה בתאריך, בשם של מקום או בפרט היסטורי - אנחנו
+                                                לא מתקנים
+                                                אותו.</p>
+                                            <p class="mb-2">הבלבול והכאב הם חלק בלתי נפרד מהזיכרון האותנטי.</p>
+                                            <p class="mb-0">הימנעו מהבעת דעה אישית או פוליטית במהלך המפגש. תנו לעד את כל
+                                                הבמה.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
 
-                <hr class="section-divider">
-
-
-                <!-- Theory to Practice Section -->
-                <div class="text-center mb-5">
-                    <h2 class="mb-3">מהלכה למעשה: פועלים לפי המצפן</h2>
-                    <p class="fs-5 mb-4" style="color: #ffffff; opacity: 0.9;">
-                        האתיקה של 'עדות 710' מורכבת מפרטים קטנים<br>שעושים הבדל גדול.
-                    </p>
-                    <div class="hint-box">
-                        לחצו על כל נושא כדי לראות איך שומרים על הגבולות בכל שלב.
-                    </div>
-
-                    <!-- Custom Accordion -->
-                    <div class="goals-accordion text-start mx-auto mt-2">
-                        <!-- Item 1 -->
-                        <div class="goal-item" data-bs-toggle="collapse" href="#collapseOne" role="button"
-                            aria-expanded="false" aria-controls="collapseOne">
-                            <div
-                                class="d-flex justify-content-between align-items-center py-3 border-bottom border-secondary">
-                                <span class="fs-5 fw-normal text-start w-100">הסכמה וזכויות</span>
-                                <div class="goal-plus flex-shrink-0 ms-3">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
-                                        stroke-width="1.5">
-                                        <line class="vertical-line" x1="12" y1="5" x2="12" y2="19"></line>
-                                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    </svg>
+                        <!-- Feedback Modal -->
+                            <div class="modal fade" id="feedbackModal" tabindex="-1" aria-hidden="true" dir="rtl">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content"
+                                        style="background-color: #0B0428; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
+                                        <div
+                                            class="modal-header border-0 d-flex justify-content-center position-relative pb-0">
+                                            <h4 class="modal-title fw-bold text-white" id="feedbackModalTitle"></h4>
+                                            <button type="button"
+                                                class="btn-close btn-close-white position-absolute start-0 ms-3 mt-3 top-0"
+                                                data-bs-dismiss="modal" aria-label="סגור"
+                                                style="width: 48px; height: 48px; background-size: 24px; margin: 0;"></button>
+                                        </div>
+                                        <div class="modal-body text-center pt-3 pb-4 text-white">
+                                            <div id="feedbackModalIcon" class="mb-3" style="font-size: 3rem;"></div>
+                                            <p id="feedbackModalText" class="fs-5 mb-0" style="opacity: 0.9;"></p>
+                                        </div>
+                                        <div class="modal-footer border-0 d-flex justify-content-center pt-0 pb-4">
+                                            <button type="button"
+                                                class="btn bg-white text-dark fw-bold rounded-3 px-5 py-2 fs-5"
+                                                data-bs-dismiss="modal">המשך לתרחיש
+                                                הבא</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="collapse goal-collapse" id="collapseOne">
-                                <div class="py-3 text-start" style="font-size: 1.125rem; opacity: 0.8;">
-                                    <h5 class="mb-3 fw-bold" style="color: #88DDFB; opacity: 1;">העדות שייכת לעד</h5>
-                                    <p class="mb-2">לפני שמתחילים להקליט, חשוב לזכור:<br>העד הוא הריבון על הסיפור שלו.
-                                    </p>
-                                    <p class="mb-2">חובה להחתים את העד על טופס הסכמה מדעת ולהסביר לו שהחומר מיועד למחקר
-                                        ולתיעוד היסטורי.</p>
-                                    <p class="mb-2">ללא חתימה – לא ניתן להשתמש בחומרים.</p>
-                                    <p class="mb-0">שימו לב: אם העד מתחרט באמצע, אנחנו עוצרים מיד. הרצון שלו קודם
-                                        לצילום.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Item 2 -->
-                        <div class="goal-item" data-bs-toggle="collapse" href="#collapseTwo" role="button"
-                            aria-expanded="false" aria-controls="collapseTwo">
-                            <div
-                                class="d-flex justify-content-between align-items-center py-3 border-bottom border-secondary">
-                                <span class="fs-5 fw-normal text-start w-100">סודיות ופרטיות</span>
-                                <div class="goal-plus flex-shrink-0 ms-3">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
-                                        stroke-width="1.5">
-                                        <line class="vertical-line" x1="12" y1="5" x2="12" y2="19"></line>
-                                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    </svg>
+                    </div> <!-- End col-lg-9 -->
+                        <!-- Desktop Sidebar -->
+                        <aside class="col-lg-3 d-none d-lg-block">
+                            <div class="position-sticky" style="top: 100px;">
+                                <div class="rounded-4 p-4 shadow-sm"
+                                    style="background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                                    <h4 class="fw-bold mb-4 fs-4 text-white">המסע שלך</h4>
+                                    <ul class="list-unstyled fs-5" style="padding-right: 0;">
+                                        <li class="mb-3">
+                                            <a href="unit1.html"
+                                                class="text-decoration-none text-white opacity-75 d-flex align-items-center desktop-sidebar-item">
+                                                <i class="bi bi-check-circle-fill ms-2 text-success"></i>מי אנחנו?
+                                            </a>
+                                        </li>
+                                        <li class="mb-3">
+                                            <a href="unit2.html"
+                                                class="text-decoration-none fw-bold text-white d-flex align-items-center desktop-sidebar-item">
+                                                <i class="bi bi-arrow-left-circle-fill ms-2"
+                                                    style="color: #39a1bb;"></i>גבולות ואתיקה
+                                            </a>
+                                        </li>
+                                        <li class="mb-3">
+                                            <a href="unit3.html"
+                                                class="text-decoration-none text-white opacity-50 d-flex align-items-center desktop-sidebar-item">
+                                                <i class="bi bi-circle ms-2"></i>חוסן
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="collapse goal-collapse" id="collapseTwo">
-                                <div class="py-3 text-start" style="font-size: 1.125rem; opacity: 0.8;">
-                                    <h5 class="mb-3 fw-bold" style="color: #88DDFB; opacity: 1;">העדות היא פיקדון בידינו
-                                    </h5>
-                                    <p class="mb-2">החומרים שאנו נחשפים אליהם הם רגישים ופרטיים.</p>
-                                    <p class="mb-2">חל איסור מוחלט לשתף קטעי גלם, תמונות מהעריכה או סיפורים אישיים
-                                        ברשתות
-                                        החברתיות או בקבוצות משפחתיות.</p>
-                                    <p class="mb-2">הדיסקרטיות שלכם היא הביטחון של העדים.</p>
-                                    <p class="mb-0">שומרים על סודיות גם בבית – הסיפורים נשארים בתוך מערכות הארגון
-                                        המאובטחות.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        </aside>
 
-                        <!-- Item 3 -->
-                        <div class="goal-item" data-bs-toggle="collapse" href="#collapseThree" role="button"
-                            aria-expanded="false" aria-controls="collapseThree">
-                            <div
-                                class="d-flex justify-content-between align-items-center py-3 border-bottom border-secondary">
-                                <span class="fs-5 fw-normal text-start w-100">גבולות הזיכרון</span>
-                                <div class="goal-plus flex-shrink-0 ms-3">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
-                                        stroke-width="1.5">
-                                        <line class="vertical-line" x1="12" y1="5" x2="12" y2="19"></line>
-                                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="collapse goal-collapse" id="collapseThree">
-                                <div class="py-3 text-start" style="font-size: 1.125rem; opacity: 0.8;">
-                                    <h5 class="mb-3 fw-bold" style="color: #88DDFB; opacity: 1;">אנחנו מראה, לא עורכים
-                                    </h5>
-                                    <p class="mb-2">תפקידנו הוא לתעד את העדות כפי שהיא נמסרת.</p>
-                                    <p class="mb-2">גם אם העד טועה בתאריך, בשם של מקום או בפרט היסטורי - אנחנו לא מתקנים
-                                        אותו.</p>
-                                    <p class="mb-2">הבלבול והכאב הם חלק בלתי נפרד מהזיכרון האותנטי.</p>
-                                    <p class="mb-0">הימנעו מהבעת דעה אישית או פוליטית במהלך המפגש. תנו לעד את כל הבמה.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Item 4 -->
-                        <div class="goal-item" data-bs-toggle="collapse" href="#collapseFour" role="button"
-                            aria-expanded="false" aria-controls="collapseFour">
-                            <div
-                                class="d-flex justify-content-between align-items-center py-3 border-bottom border-secondary">
-                                <span class="fs-5 fw-normal text-start w-100">התנהלות בשטח</span>
-                                <div class="goal-plus flex-shrink-0 ms-3">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
-                                        stroke-width="1.5">
-                                        <line class="vertical-line" x1="12" y1="5" x2="12" y2="19"></line>
-                                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="collapse goal-collapse" id="collapseFour">
-                                <div class="py-3 text-start" style="font-size: 1.125rem; opacity: 0.8;">
-                                    <h5 class="mb-3 fw-bold" style="color: #88DDFB; opacity: 1;">אורחים בתוך הכאב</h5>
-                                    <p class="mb-2">תפקידנו הוא לתעד את העדות כפי שהיא נמסרת.</p>
-                                    <p class="mb-2">גם אם העד טועה בתאריך, בשם של מקום או בפרט היסטורי - אנחנו לא מתקנים
-                                        אותו.</p>
-                                    <p class="mb-2">הבלבול והכאב הם חלק בלתי נפרד מהזיכרון האותנטי.</p>
-                                    <p class="mb-0">הימנעו מהבעת דעה אישית או פוליטית במהלך המפגש. תנו לעד את כל הבמה.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Down Arrow Indicator (from images) -->
-                    <div class="mt-5 pt-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white"
-                            class="bi bi-arrow-down" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Feedback Modal -->
-                <div class="modal fade" id="feedbackModal" tabindex="-1" aria-hidden="true" dir="rtl">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content" style="background-color: #0B0428; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;">
-                            <div class="modal-header border-0 d-flex justify-content-center position-relative pb-0">
-                                <h4 class="modal-title fw-bold text-white" id="feedbackModalTitle"></h4>
-                                <button type="button" class="btn-close btn-close-white position-absolute start-0 ms-3 mt-3 top-0"
-                                    data-bs-dismiss="modal" aria-label="סגור" style="width: 48px; height: 48px; background-size: 24px; margin: 0;"></button>
-                            </div>
-                            <div class="modal-body text-center pt-3 pb-4 text-white">
-                                <div id="feedbackModalIcon" class="mb-3" style="font-size: 3rem;"></div>
-                                <p id="feedbackModalText" class="fs-5 mb-0" style="opacity: 0.9;"></p>
-                            </div>
-                            <div class="modal-footer border-0 d-flex justify-content-center pt-0 pb-4">
-                                <button type="button" class="btn bg-white text-dark fw-bold rounded-pill px-5 py-2 fs-5" data-bs-dismiss="modal">המשך לתרחיש
-                                    הבא</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                    </div> <!-- End row -->
             </main>
         </div>
     </div>
+
+    <!-- Unit Completed Section (Full Width) -->
+    <section class="py-5" style="background-color: var(--grey-light); color: var(--main-bg);">
+        <div class="container text-center">
+            <p class="fs-3 fw-bold mb-2">יחידת "גבולות ואתיקה" הושלמה בהצלחה.</p>
+            <p class="fs-5 mb-4" style="opacity: 0.9;">כעת נחזור לתפריט הראשי לבחירת הנושא הבא.</p>
+
+            <a href="index.html" class="btn fw-bold rounded-3 px-5 py-2 fs-5 btn-finish-unit">
+                ליחידה הבאה
+            </a>
+        </div>
+    </section>
 
     <!-- Site Footer -->
     <footer class="site-footer">
